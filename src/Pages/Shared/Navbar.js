@@ -33,7 +33,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to=''> <Button>login</Button></Link>
+                {/* <Link to=''><Button>login</Button></Link> */}
             </div>
         </div>
     );

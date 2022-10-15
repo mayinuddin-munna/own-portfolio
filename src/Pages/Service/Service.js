@@ -22,7 +22,7 @@ const Service = () => {
                                 <div key={index}>
                                     <figure className="drop-shadow-md sm:96 rounded-xl p-8" style={{ backgroundColor: '#ffffff' }}>
                                         <img className="w-24 h-24 rounded-full mx-auto" src={logo} alt="" width="384" height="512" />
-                                        <div className="p-5 text-center space-y-4">
+                                        <div className="text-center space-y-4">
                                             <h3 className='text-xl font-medium'>{item.title}</h3>
                                             <p>{item.description}</p>
                                         </div>

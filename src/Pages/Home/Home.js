@@ -18,7 +18,7 @@ const Home = () => {
                     <div className='mt-[-14rem] text-white '>
                         <p className="text-xl mb-5"><span className='[#000]'>Hello</span> i am</p>
                         <Typed
-                            className='text-5xl tracking-widest leading-loose font-bold'
+                            className='text-5xl sm:text-2xl tracking-widest leading-loose font-bold'
                             strings={['Mayinuddin Munna.']}
                             typeSpeed={40}
                         />
