@@ -18,12 +18,12 @@ const Home = () => {
                     <div className='mt-[-14rem] text-white '>
                         <p className="text-xl mb-5"><span className='[#000]'>Hello</span> i am</p>
                         <Typed
-                            className='text-5xl sm:text-2xl tracking-widest leading-loose font-bold'
+                            className='text-2xl sm:text-5xl tracking-widest leading-loose font-bold'
                             strings={['Mayinuddin Munna.']}
                             typeSpeed={40}
                         />
                         <br />
-                        <h1 className="text-2xl font-medium mt-5">
+                        <h1 className="text-l sm:text-2xl font-medium mt-5">
                             Native Design & Front-End developer
                         </h1>
                         <div className="d-flex flex gap-4 mt-5 py-5 ">
