@@ -23,7 +23,7 @@ const Home = () => {
                             typeSpeed={40}
                         />
                         <br />
-                        <h1 className="text-l sm:text-2xl font-medium mt-5">
+                        <h1 className="text-xl sm:text-2xl font-medium mt-5">
                             Native Design & Front-End developer
                         </h1>
                         <div className="d-flex flex gap-4 mt-5 py-5 ">

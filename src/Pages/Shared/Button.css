@@ -12,15 +12,15 @@
 	transition: 1s all ease;
 }
 
-/* @media (max-width: 375px) {
+@media (max-width: 375px) {
 	.button{
 		padding: 14px 30px;
 	}
-} */
+}
 
 @media (max-width: 320px) {
 	.button{
-		padding: 10px 20px;
+		padding: 5px 10px;
 	}
 }
 
