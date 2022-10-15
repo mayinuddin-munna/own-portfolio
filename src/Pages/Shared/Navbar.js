@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LOGO from '../../presets/images/LOGO.png'
-import Button from './Button';
 
 const Navbar = () => {
     const menuItem = <>
@@ -33,7 +32,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {/* <Link to=''><Button>login</Button></Link> */}
+                <Link to=''><button className="btn btn-outline btn-accent">login</button></Link>
             </div>
         </div>
     );
