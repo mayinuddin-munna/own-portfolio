@@ -27,9 +27,9 @@ const Home = () => {
                             Native Design & Front-End developer
                         </h1>
                         <div className="d-flex flex gap-4 mt-5 py-5 ">
-                            <Link to="https://www.linkedin.com/in/mayinuddin-munna-b8b9541a1/" target="_blank" rel="noreferrer" className="avatar"><FaLinkedin /></Link>
-                            <Link to="https://github.com/munnahosssain" target="_blank" rel="noreferrer" className=""><FaGithub /></Link>
-                            <Link to="https://github.com/munnahosssain" target="_blank" rel="noreferrer" className="" ><BsFillFileEarmarkTextFill /></Link>
+                            <a href="https://www.linkedin.com/in/mayinuddin-munna-b8b9541a1/" target="_blank" rel="noreferrer" className="avatar"><FaLinkedin /></a>
+                            <a href="https://github.com/munnahosssain" target="_blank" rel="noreferrer" className=""><FaGithub /></a>
+                            <a href="https://github.com/munnahosssain" target="_blank" rel="noreferrer" className="" ><BsFillFileEarmarkTextFill /></a>
                         </div>
                     </div>
                     <div className='mt-[-14rem] hidden lg:block'>
