@@ -18,8 +18,8 @@ const About = () => {
                             <p className="font-serif">I have been developing website more then 2 years. Technologies I use ReactJs. I create responsive website that are displayed on all devices.I have the ability to write semantic, cross-browser compatible, clean code by hand that is re-useable, maintainable, and easy to understand. The main areas of my expertise are HTML, CSS, Bootstrap, JavaScript , React and Redux. I also have intermediate knowledge of Next.js Node.js, Express.js and MongoDB. So if you are looking for a front-end developer for your company, I can be the solution you're looking for. I am very much enthusiastic to show you how my experience and skills meet your needs.</p>
                             <p>You can send email directly from here or contact with me via.</p>
                             <div className='flex lg:gap-5 md:gap-5 sm:gap-1 mt-5'>
-                                <Link to='/contact'><Button>Hire me</Button></Link>
-                                <Button><FaDownload className='lg:mr-3 md:mr-3 mt-1' />resume</Button>
+                                <Button><Link to='/contact'>Hire me</Link></Button>
+                                <a target="_blank" rel="noreferrer" href="https://cloud.mongodb.com/v2/633d6023fa1afb45b3598bbd#metrics/replicaSet/633d6061950e9e69edb83fc3/explorer/own_portfolio/design/find"><Button><FaDownload className='lg:mr-3 md:mr-3 mt-1' />resume</Button></a>
                             </div>
                         </Slide>
                     </div>
