@@ -34,7 +34,7 @@ const Contact = () => {
                         <div className="card-body">
                             <div className=''>
                                 <h3 className='text-4xl font-bold leading-loose text-[#040c2c] mb-2'>Contact info</h3>
-                                <p className='flex items-center'><GoLocation className='mr-2' />Address: Z105 - Tan Thinh, Thai Nguyen - Viet Nam</p>
+                                <p className='flex items-center'><GoLocation className='mr-2' />Address: 1207 - Baitul Aman Housing, Adabor Dhaka</p>
                                 <a className='flex items-center mb-5 mt-5' href="tel:+8801572394249"><BsTelephoneFill className='mr-2' />Phone: 01572394249</a>
                                 <a className='flex items-center' href="mailto:mayinuddin.munna@gmail.com"><HiMail className='mr-2' />Email: mayinuddin.munna@gmail.com</a>
                                 <a className='flex items-center mt-5 mb-5' href="https://mayinuddinmunna.web.app/"><FaGlobe className='mr-2' />Website: mayinuddinmunna.web.app</a>
@@ -55,7 +55,6 @@ const Contact = () => {
                                         placeholder="Your Email*"
                                         name="user_email"
                                         {...register("email", {
-                                            value: true,
                                             message: 'Email is required'
                                         }, {
                                             value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
