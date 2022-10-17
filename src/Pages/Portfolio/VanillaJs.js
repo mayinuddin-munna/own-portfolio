@@ -26,7 +26,7 @@ const VanillaJs = () => {
                     loading ? (<Loading />) : (
                         data.map((item, index) =>
                             <div key={index}>
-                                <figure className="w-96 rounded-xl p-8 dark:bg-slate-100">
+                                <figure className="w-92 rounded-xl p-8 dark:bg-slate-100">
                                     <img className="w-24 h-24 rounded-full mx-auto" src={item.img} alt="" width="384" height="512" />
                                     <div className="pt-6 text-center space-y-4">
                                         <h3>{item.title}</h3>
