@@ -1,11 +1,11 @@
 import React from 'react';
 import Typed from 'react-typed';
-import { GrResume } from 'react-icons/gr';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Contact from '../Contact/Contact';
 import canva from '../../presets/images/canva.png';
 import bgHome from '../../presets/images/bgHome.svg';
-import Contact from '../Contact/Contact';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { BsFillFileEarmarkTextFill } from 'react-icons/bs';
 
 const About = React.lazy(() => import('../About/About'));
 const Service = React.lazy(() => import('../Service/Service'));
@@ -27,16 +27,16 @@ const Home = () => {
                             Native Design & Front-End developer
                         </h1>
                         <div className="d-flex flex gap-4 mt-5 py-5 ">
-                            <Link to="https://www.linkedin.com/in/mayinuddin-munna-b8b9541a1/" target="_blank" rel="noreferrer" className="hover:bg-white"><FaLinkedin /></Link>
+                            <Link to="https://www.linkedin.com/in/mayinuddin-munna-b8b9541a1/" target="_blank" rel="noreferrer" className="avatar"><FaLinkedin /></Link>
                             <Link to="https://github.com/munnahosssain" target="_blank" rel="noreferrer" className=""><FaGithub /></Link>
-                            <Link to="https://github.com/munnahosssain" target="_blank" rel="noreferrer" className="hover:bg-white color-white w-6 h-6"><GrResume /></Link>
+                            <Link to="https://github.com/munnahosssain" target="_blank" rel="noreferrer" className="" ><BsFillFileEarmarkTextFill /></Link>
                         </div>
                     </div>
                     <div className='mt-[-14rem] hidden lg:block'>
                         <img src={bgHome} alt='database' className="max-w-sm rounded-lg shadow-2xl" />
                     </div>
                 </div>
-                <img className='mt-[-310px]' src={canva} alt="bottom" />
+                <img className='mt-[-285px]' src={canva} alt="bottom" />
             </div>
             <About />
             <Service />
