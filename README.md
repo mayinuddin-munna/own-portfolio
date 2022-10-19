@@ -1,7 +1,7 @@
 # `own portfolio`
 
 Runs the app in the preview mode.\
-Open [https://mayinuddinmunna.web.app/](mayinuddinmunna.web.app) to view it in your browser.
+Open [mayinuddinmunna.web.app](https://mayinuddinmunna.web.app) to view it in your browser.
 
 ## Project Purpose
 
@@ -44,9 +44,9 @@ The home page contains the basic details of the portfolio. These include:
 | | Your Email | |
 | | Subject | |
 | | Phone Number | |
-| Details | Your Message |
+| Details | Text |
 | | Your Message | |
-| Submit | Generate quat button |
+| Submit | Generated quat button |
 
 
 > *"The best way to learn a new programming language is by writing programs in it."*
