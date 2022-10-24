@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Slide } from 'react-reveal';
-import logo from '../../presets/images/LOGO.png';
+// import logo from '../../presets/images/LOGO.png';
+import logo from '../../presets/images/design.png';
 
 const Service = () => {
     const [data, setData] = useState([]);
@@ -18,10 +19,10 @@ const Service = () => {
                 <div className='lg:mt-[-10px] hero min-h-screen'>
                     <div className="flex grid gap-y-8 gap-x-8 lg:grid-cols-3 md:grid-cols-2 sm:mt-5 px-20">
                         {
-                            data.map((item, index) =>
-                                <div key={index}>
+                            data.map((item) =>
+                                <div key={item._id}>
                                     <figure className="drop-shadow-md sm:96 rounded-xl p-8" style={{ backgroundColor: '#ffffff' }}>
-                                        <img className="w-24 h-24 rounded-full mx-auto" src={logo} alt="" width="384" height="512" />
+                                        <img className="w-28 h-28 hover:color-black rounded-full mx-auto" src={item.img} alt="" width="384" height="512" />
                                         <div className="text-center space-y-4">
                                             <h3 className='text-xl font-medium'>{item.title}</h3>
                                             <p>{item.description}</p>
