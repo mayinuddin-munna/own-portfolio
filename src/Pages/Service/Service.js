@@ -64,7 +64,7 @@ const Service = () => {
                         {
                             data.map(item =>
                                 <div key={item._id}>
-                                    <figure className="drop-shadow-md sm:96 rounded-xl p-8" style={{ backgroundColor: '#ffffff' }}>
+                                    <figure className="drop-shadow-md rounded-xl p-8" style={{ backgroundColor: '#ffffff' }}>
                                         <img className="w-28 h-28 rounded-full mx-auto" src={item.img} alt="serviceIcon" width="384" height="512" />
                                         <div className="text-center space-y-4">
                                             <h3 className='text-xl font-medium mt-2'>{item.title}</h3>

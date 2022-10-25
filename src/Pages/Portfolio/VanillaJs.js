@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import { TbWorld } from 'react-icons/tb';
 import { AiFillGithub } from 'react-icons/ai';
@@ -31,10 +30,9 @@ const VanillaJs = () => {
                                     <div className="pt-6 text-center space-y-4">
                                         <h3>{item.title}</h3>
                                         <div className="flex justify-evenly">
-                                            <a target="_blank" rel="noreferrer" href="https://dental-carebd.web.app/"><TbWorld /></a>
-                                            <Link target="_blank" to="/github.com/munnahosssain/Dental-care-UI"><AiFillGithub /></Link>
+                                            <a target="_blank" rel="noreferrer" href={item.live}><TbWorld /></a>
+                                            <a target="_blank" rel="noreferrer" href={item.github}><AiFillGithub /></a>
                                         </div>
-                                        {/* <p className="text-lg font-medium"></p> */}
                                     </div>
                                 </figure>
                             </div>
