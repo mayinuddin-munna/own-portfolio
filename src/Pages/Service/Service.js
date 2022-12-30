@@ -59,14 +59,14 @@ const Service = () => {
             <Slide bottom>
                 <h2 className='text-4xl font-bold leading-loose text-[#040c2c]'>What I'm Doing</h2>
                 <p className=''>I love what I do. I take great pride in what I do.</p>
-                <div className='lg:mt-[-10px] hero min-h-screen'>
-                    <div className="flex grid gap-y-8 gap-x-8 lg:grid-cols-3 md:grid-cols-2 sm:mt-5 px-20">
+                <div className='lg:mt-[-20px] hero min-h-screen'>
+                    <div className="flex grid gap-y-8 gap-x-8 lg:grid-cols-3 md:grid-cols-2 sm:mt-5 lg:px-36 px-20">
                         {
                             data.map(item =>
                                 <div key={item._id}>
                                     <figure className="drop-shadow-md rounded-xl p-8" style={{ backgroundColor: '#ffffff' }}>
                                         <img className="w-28 h-28 rounded-full mx-auto" src={item.img} alt="serviceIcon" width="384" height="512" />
-                                        <div className="text-center space-y-4">
+                                        <div className="text-center space-y-8">
                                             <h3 className='text-xl font-medium mt-2'>{item.title}</h3>
                                             <p>{item.description}</p>
                                         </div>

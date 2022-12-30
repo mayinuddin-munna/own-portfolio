@@ -14,7 +14,7 @@ const Home = () => {
             <div style={{ backgroundColor: '#061117' }}>
                 <div className='fle justify-evenly hero min-h-screen sm:flex px-6'>
                     <div className='mt-[-14rem] text-white '>
-                        <p className="text-xl mb-5">Hello i am</p>
+                        <p className="text-xl mb-5">Hello, i am</p>
                         <Typed
                             className='text-2xl sm:text-5xl tracking-widest leading-loose font-bold'
                             strings={['Mayinuddin Munna.']}
@@ -24,9 +24,9 @@ const Home = () => {
                             Native Design & Front-End developer
                         </h1>
                         <div className="d-flex flex gap-4 mt-5 py-5 ">
-                            <a href="https://www.linkedin.com/in/mayinuddin-munna-b8b9541a1/" target="_blank" rel="noreferrer" className="avatar"><FaLinkedin /></a>
-                            <a href="https://github.com/munnahosssain" target="_blank" rel="noreferrer" className=""><FaGithub /></a>
-                            <a href="https://docs.google.com/document/d/1tq4DfzJRoj027lJkkN6W8oaWZASBhfw_Iex119ehRAw/edit?usp=sharing" target="_blank" rel="noreferrer" className="" ><BsFillFileEarmarkTextFill /></a>
+                            <a href="https://www.linkedin.com/in/mayinuddin-munna-b8b9541a1/" target="_blank" rel="noreferrer" className="avatar"><FaLinkedin size={24} /></a>
+                            <a href="https://github.com/munnahosssain" target="_blank" rel="noreferrer" className=""><FaGithub size={24} /></a>
+                            <a href="https://docs.google.com/document/d/1tq4DfzJRoj027lJkkN6W8oaWZASBhfw_Iex119ehRAw/edit?usp=sharing" target="_blank" rel="noreferrer" className="" ><BsFillFileEarmarkTextFill size={24} /></a>
                         </div>
                     </div>
                     <div className='mt-[-14rem] hidden lg:block'>
