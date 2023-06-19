@@ -12,7 +12,7 @@ const Contact = React.lazy(() => import("./Pages/Contact/Contact.jsx"));
 const Error = React.lazy(() => import("./Pages/Shared/Error/Error"));
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Loading from "./Pages/Shared/Loading/Loading";
-import Home from "./Pages/Home/Home";
+import Home from "./Pages/Home/Home/Home";
 const router = createBrowserRouter([
   {
     path: "/",

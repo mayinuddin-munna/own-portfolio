@@ -19,27 +19,18 @@ const pages = ["Home", "About", "Services", "Portfolio", "Blog", "Contact"];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  const iconBar = (
+  const titleBar = (
     <>
-      <Link to="/">
+      <Link to="/home">
         <img src={logo} style={{ height: "3rem" }} alt="logo" />
       </Link>
     </>
@@ -49,15 +40,10 @@ const Navbar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} >
-          <Link to="/">
-            <img src={logo} style={{ height: "3rem" }} alt="logo" />
-          </Link>
-          </AdbIcon> */}
           <Typography
             variant="h6"
             noWrap
-            component="a"
+            component={Link}
             to="/"
             sx={{
               mr: 2,
@@ -69,10 +55,40 @@ const Navbar = () => {
               textDecoration: "none",
             }}
           >
-            {iconBar}
+            {titleBar}
           </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                component={Link}
+                to={`/${page.toLowerCase()}`}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+          <Typography
+            variant="h5"
+            noWrap
+            component={Link}
+            to="/"
+            sx={{
+              mr: 2,
+              display: { xs: "flex", md: "none" },
+              flexGrow: 1,
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            {titleBar}
+          </Typography>
+          <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -102,51 +118,17 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+                <Button
+                  key={page}
+                  component={Link}
+                  to={`/${page.toLowerCase()}`}
+                  onClick={handleCloseNavMenu}
+                  sx={{ mx: 12, color: "black", display: "block" }}
+                >
+                  {page}
+                </Button>
               ))}
             </Menu>
-          </Box>
-          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            to="/"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            {iconBar}
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                component={Link}
-                to={`/${page.toLowerCase()}`}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
           </Box>
         </Toolbar>
       </Container>
