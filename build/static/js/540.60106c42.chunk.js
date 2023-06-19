@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmunnas_portfolio_ui=self.webpackChunkmunnas_portfolio_ui||[]).push([[540],{1540:function(n,e,s){s.r(e);s(2791);var t=s(184);e.default=function(){return(0,t.jsx)("div",{className:"h-screen flex justify-center items-center",children:(0,t.jsx)("button",{className:"btn loading",children:"loading"})})}}}]);
+//# sourceMappingURL=540.60106c42.chunk.js.map
