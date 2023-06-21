@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,13 +7,14 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
+import RestoreIcon from "@mui/icons-material/Restore";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
+import { ColorModeContext } from "../../../providers/ThemeContext";
 
 const pages = ["Home", "About", "Services", "Portfolio", "Blog", "Contact"];
 
@@ -36,28 +37,27 @@ const Navbar = () => {
     </>
   );
 
+  const theme = useTheme();
+  const colorMode = useContext(ColorModeContext);
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
-            noWrap
-            component={Link}
-            to="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
             {titleBar}
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              width: 500,
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
@@ -77,7 +77,7 @@ const Navbar = () => {
             to="/"
             sx={{
               mr: 2,
-              display: { xs: "flex", md: "none" },
+              display: { xs: "flex", sm: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
@@ -122,6 +122,7 @@ const Navbar = () => {
                   key={page}
                   component={Link}
                   to={`/${page.toLowerCase()}`}
+                  icon={<RestoreIcon />}
                   onClick={handleCloseNavMenu}
                   sx={{ mx: 12, color: "black", display: "block" }}
                 >
@@ -130,6 +131,21 @@ const Navbar = () => {
               ))}
             </Menu>
           </Box>
+          <Box>
+            {theme.palette.mode} mode
+            <IconButton
+              sx={{ ml: 1 }}
+              onClick={colorMode.toggleColorMode}
+              color="inherit"
+            >
+              {theme.palette.mode === "dark" ? (
+                <Brightness7Icon />
+              ) : (
+                <Brightness4Icon />
+              )}
+            </IconButton>
+          </Box>
+          <Button color="inherit">Login</Button>
         </Toolbar>
       </Container>
     </AppBar>

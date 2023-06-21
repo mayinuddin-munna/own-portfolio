@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 // eslint-disable-next-line react-refresh/only-export-components
 import "./index.css";
-import React, { Suspense } from "react";
+import React, { Suspense, useMemo, useState } from "react";
 import ReactDOM from "react-dom/client";
 const App = React.lazy(() => import("./App.jsx"));
 const About = React.lazy(() => import("./Pages/About/About.jsx"));
@@ -13,6 +13,9 @@ const Error = React.lazy(() => import("./Pages/Shared/Error/Error"));
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Loading from "./Pages/Shared/Loading/Loading";
 import Home from "./Pages/Home/Home/Home";
+import ThemeContext from "./providers/ThemeContext";
+import CssBaseline from '@mui/material/CssBaseline';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,7 +53,10 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Suspense fallback={<Loading />}>
+      <ThemeContext>
+      <CssBaseline />
       <RouterProvider router={router} />
+      </ThemeContext>
     </Suspense>
   </React.StrictMode>
 );
