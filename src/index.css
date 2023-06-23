@@ -72,3 +72,25 @@ body {
   margin: 0;
   background-color: #242424;
 }
+
+.css-0 {
+  font-size: 0;
+}
+
+@keyframes rotate {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+}
+
+.css-mxi1ow {
+  animation: rotate 22s linear infinite;
+  animation-delay: 2s;
+}
