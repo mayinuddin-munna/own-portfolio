@@ -7,6 +7,9 @@ import aboutCanvas from "../../../src/assets/images/canva.png";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
+  contact:{
+    margin:'11rem 0'
+  },
   bannerContainer: {
     margin: "",
     display: "flex",
@@ -32,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   image: {
-    maxWidth: "100%",
+    maxWidth: "80%",
     height: "auto",
     borderRadius: theme.spacing(50),
   },
@@ -42,7 +45,7 @@ const About = () => {
   const classes = useStyles();
 
   return (
-    <>
+    <div className={classes.about}>
       {/* <img
         data-aos="fade-up"
         src={aboutCanvas}
@@ -81,7 +84,7 @@ const About = () => {
           />
         </div>
       </Container>
-    </>
+    </div>
   );
 };
 

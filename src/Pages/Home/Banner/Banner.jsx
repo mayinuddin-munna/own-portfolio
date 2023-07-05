@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography } from "@material-ui/core";
+import { Button, Container, Typography } from "@material-ui/core";
 import bannerImg from "../../../assets/images/banner1.png";
 import canvas from "../../../assets/images/canva.png";
 import SouthIcon from "@mui/icons-material/South";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 const useStyles = makeStyles((theme) => ({
   banner: { margin: "13rem 0" },
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   nameWeight: {
-    marginBottom:"10px",
+    marginBottom: "10px",
     fontWeight: 600,
   },
   imageContainer: {
@@ -57,7 +58,8 @@ const Banner = () => {
       <Container maxWidth="lg" className={classes.bannerContainer}>
         <div className={classes.textContainer}>
           <Typography variant="h6">
-            <span style={{color:'lightBlue',paddingLeft:'4px'}}>Hello</span>, i am
+            <span style={{ color: "red", paddingLeft: "4px" }}>Hello</span>, i
+            am
           </Typography>
           <Typography
             variant="h2"
@@ -67,9 +69,20 @@ const Banner = () => {
           >
             Mayinuddin Munna.
           </Typography>
+          {/* <TextEffect>Hello</TextEffect> */}
           <Typography variant="h5" className={classes.nameWeight}>
             Native Design & Front-End Developer.
           </Typography>
+          <div style={{ marginTop: "1.5rem", fontWeight: "bold" }}>
+            <a
+              href="../../../../src/assets/images/Mayinuddin_Munna-resume - Google Docs.pdf"
+              download
+            >
+              <Button variant="contained" endIcon={<FileDownloadIcon />}>
+                Resume
+              </Button>
+            </a>
+          </div>
         </div>
         <div className={classes.imageContainer}>
           <img
