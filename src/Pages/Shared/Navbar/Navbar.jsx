@@ -8,7 +8,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 import RestoreIcon from "@mui/icons-material/Restore";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const titleBar = (
     <>
-      <Link smooth to="/home">
+      <Link to="/home">
         <img src={logo} style={{ height: "3rem" }} alt="logo" />
       </Link>
     </>
@@ -145,7 +145,7 @@ const Navbar = () => {
               )}
             </IconButton>
           </Box>
-          <Button color="inherit">Login</Button>
+          {/* <Button color="inherit">Login</Button> */}
         </Toolbar>
       </Container>
     </AppBar>

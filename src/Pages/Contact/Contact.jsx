@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   textContainer: {
-    // flex: 1,
     [theme.breakpoints.down("sm")]: {
       marginBottom: theme.spacing(2),
     },
