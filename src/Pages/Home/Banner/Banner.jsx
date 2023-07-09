@@ -1,15 +1,30 @@
-import React, { useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Button, Container, Typography } from "@material-ui/core";
-import bannerImg from "../../../assets/images/banner1.png";
-import canvas from "../../../assets/images/canva.png";
-import SouthIcon from "@mui/icons-material/South";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import React, { useEffect } from "react";
+import ScrollToTop from "react-scroll-up";
+import SouthIcon from "@mui/icons-material/South";
+import { makeStyles } from "@material-ui/core/styles";
+import canvas from "../../../assets/images/canva.png";
+import bannerImg from "../../../assets/images/zone_landing.png";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import { Button, Container, Typography } from "@material-ui/core";
+import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 
 const useStyles = makeStyles((theme) => ({
-  banner: { margin: "13rem 0" },
+  banner: {
+    margin:"4rem 0"
+  },
+  arrow: {
+    animation: "$bounce 2s infinite",
+  },
+  "@keyframes bounce": {
+    "0%, 100%": {
+      transform: "translateY(0)",
+    },
+    "50%": {
+      transform: "translateY(10px)",
+    },
+  },
   bannerContainer: {
     display: "flex",
     flexDirection: "row",
@@ -40,11 +55,6 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     borderRadius: theme.spacing(1),
   },
-  scroll: {
-    left: 0,
-    right: 0,
-    position: "absolute",
-  },
 }));
 
 const Banner = () => {
@@ -55,50 +65,78 @@ const Banner = () => {
 
   return (
     <div className={classes.banner}>
-      <Container maxWidth="lg" className={classes.bannerContainer}>
-        <div className={classes.textContainer}>
-          <Typography variant="h6">
-            <span style={{ color: "red", paddingLeft: "4px" }}>Hello</span>, i
-            am
-          </Typography>
-          <Typography
-            variant="h2"
-            component="h1"
-            className={classes.nameWeight}
-            gutterBottom
-          >
-            Mayinuddin Munna.
-          </Typography>
-          {/* <TextEffect>Hello</TextEffect> */}
-          <Typography variant="h5" className={classes.nameWeight}>
-            Native Design & Front-End Developer.
-          </Typography>
-          <div style={{ marginTop: "1.5rem", fontWeight: "bold" }}>
-            <a
-              href="../../../../src/assets/images/Mayinuddin_Munna-resume - Google Docs.pdf"
-              download
+      <div>
+        <Container maxWidth="lg" className={classes.bannerContainer}>
+          <div className={classes.textContainer}>
+            <Typography variant="h6">
+              <span style={{ color: "red", paddingLeft: "4px" }}>Hello</span>, i
+              am
+            </Typography>
+            <Typography
+              variant="h2"
+              component="h1"
+              className={classes.nameWeight}
+              gutterBottom
             >
-              <Button variant="contained" endIcon={<FileDownloadIcon />}>
-                Resume
-              </Button>
-            </a>
+              Mayinuddin Munna.
+            </Typography>
+            <Typography variant="h5" className={classes.nameWeight}>
+              Native Design & Front-End Developer.
+            </Typography>
+            <div style={{ marginTop: "1.5rem", fontWeight: "bold" }}>
+              <a href="/Mayinuddin_Munna-resume-GoogleDocs.pdf" download>
+                <Button
+                  sx={{ fontWeight: "bold" }}
+                  variant="contained"
+                  endIcon={<FileDownloadIcon />}
+                >
+                  Resume
+                </Button>
+              </a>
+            </div>
+          </div>
+          <div className={classes.imageContainer}>
+            <img
+              src={bannerImg}
+              alt="Portfolio image"
+              className={`${classes.image} css-mxi1ow`}
+            />
+          </div>
+        </Container>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              cursor: "pointer",
+              borderRadius: "50%",
+              padding: ".5rem",
+            }}
+          >
+            <SouthIcon
+              className={classes.arrow}
+              style={{
+                fontSize: "2rem",
+              }}
+            />
           </div>
         </div>
-        <div className={classes.imageContainer}>
-          <img
-            src={bannerImg}
-            alt="Portfolio image"
-            className={`${classes.image} css-mxi1ow`}
+        <img
+          src={canvas}
+          alt="Portfolio"
+          className={classes.image}
+        />
+        <ScrollToTop showUnder={960}>
+          <KeyboardDoubleArrowUpIcon
+            sx={{ fontSize: "3rem" }}
+            className={classes.arrow}
           />
-        </div>
-      </Container>
-      <SouthIcon style={{ display: "flex" }} />
-      <img
-        data-aos="fade-up"
-        src={canvas}
-        alt="Portfolio"
-        className={classes.image}
-      />
+        </ScrollToTop>
+      </div>
     </div>
   );
 };

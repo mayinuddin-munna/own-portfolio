@@ -80,7 +80,7 @@ body {
 @keyframes rotate {
   0%,
   100% {
-    transform: rotate(0deg);
+    transform: rotate(10deg);
   }
   20% {
     transform: rotate(-5deg);
@@ -92,5 +92,5 @@ body {
 
 .css-mxi1ow {
   animation: rotate 22s linear infinite;
-  animation-delay: 2s;
+  animation-delay: 22s;
 }

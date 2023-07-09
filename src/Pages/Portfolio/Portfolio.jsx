@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+// eslint-disable-next-line react/no-unescaped-entities
 import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -8,6 +10,8 @@ import { Container } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
+import alpha from "../../../src/assets/images/alpha.png";
+
 const useStyles = makeStyles((theme) => ({
   portfolio: { margin: "10rem 0" },
 }));
@@ -15,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 const Portfolio = () => {
   const images = [
     {
-      url: "../../../src/assets/images/alpha.png",
+      url: {alpha},
       title: "Alpha photography",
       live: "https://alpha-photography-2fcdd.web.app/",
       client: "https://github.com/munnahosssain/Alpha-photography-client",
@@ -51,6 +55,7 @@ const Portfolio = () => {
         variant="h3"
         style={{ font: "bold", textAlign: "center", margin: "3rem 0 10px 0" }}
       >
+        
         What I'm Doing
       </Typography>
       <Typography variant="body1" style={{ textAlign: "center" }}>

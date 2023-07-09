@@ -3,11 +3,10 @@ import "aos/dist/aos.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Container, Typography } from "@material-ui/core";
 import banner from "../../../src/assets/images/formal.png";
-import aboutCanvas from "../../../src/assets/images/canva.png";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  contact:{
+  about:{
     margin:'11rem 0'
   },
   bannerContainer: {
@@ -46,12 +45,6 @@ const About = () => {
 
   return (
     <div className={classes.about}>
-      {/* <img
-        data-aos="fade-up"
-        src={aboutCanvas}
-        alt="Portfolio"
-        className={classes.image}
-      /> */}
       <Container maxWidth="lg" className={classes.bannerContainer}>
         <div className={classes.textContainer}>
           <Typography variant="h3">About Me</Typography>

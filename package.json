@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@egjs/react-flicking": "^4.10.10",
     "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -25,6 +26,8 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.0",
     "react-router-dom": "^6.13.0",
+    "react-scroll-up": "^1.4.0",
+    "react-slick": "^0.29.0",
     "react-spring": "^9.7.2",
     "sort-by": "^1.2.0"
   },

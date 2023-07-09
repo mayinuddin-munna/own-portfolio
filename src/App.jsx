@@ -6,7 +6,7 @@ import Navbar from "./Pages/Shared/Navbar/Navbar";
 function App() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <Outlet />
       <Footer />
     </>

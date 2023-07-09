@@ -13,10 +13,10 @@ import logo from "../../../assets/images/logo.png";
 import RestoreIcon from "@mui/icons-material/Restore";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import { ColorModeContext } from "../../../providers/ThemeContext";
 
-const pages = ["Home", "About", "Services", "Portfolio", "Blog", "Contact"];
+const pages = ["Home", "About", "Skills", "Portfolio", "Blog", "Contact"];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const titleBar = (
     <>
-      <Link to="/home">
+      <Link smooth to="/home">
         <img src={logo} style={{ height: "3rem" }} alt="logo" />
       </Link>
     </>
