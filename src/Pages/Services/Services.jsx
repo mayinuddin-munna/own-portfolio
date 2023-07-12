@@ -13,20 +13,18 @@ import { experimentalStyled as styled } from "@mui/material/styles";
 
 const useStyles = makeStyles((theme) => ({
   skills: {
-    margin: "7rem 0",
+    margin: "3rem 0",
   },
   sideBanner: {
+    display: "flex",
     height: "30rem",
     marginTop: "1rem",
-  },
-  bgImage: {
-    width: "6rem",
-    height: "30rem",
-    marginTop: "1.7rem",
+    alignItems: "center",
     backgroundSize: "cover",
+    justifyContent: "center",
     backgroundPosition: "center",
     backgroundImage:
-      'linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../src/assets/images/rotateFont.jpeg")',
+      'linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../../src/assets/images/rotateFont.jpeg")',
   },
 }));
 
@@ -38,7 +36,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const Skills = () => {
+const Services = () => {
   const data = [
     {
       id: 200,
@@ -93,7 +91,16 @@ const Skills = () => {
   const classes = useStyles();
   return (
     <Container className={classes.skills}>
-      <Box sx={{ flexGrow: 1 }}>
+      <Typography
+        variant="h3"
+        style={{ fontWeight: "bold", textAlign: "center", margin: "3rem 0 10px 0" }}
+      >
+        What I'm Doing
+      </Typography>
+      <Typography variant="body1" style={{ textAlign: "center" }}>
+        I love what i do. I take great pride in what i do.
+      </Typography>
+      <Box sx={{ flexGrow: 1, margin:"2rem 0" }}>
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}
@@ -122,20 +129,21 @@ const Skills = () => {
           ))}
         </Grid>
       </Box>
-
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 2, sm: 8, md: 12 }}
       >
-        <Grid xs={2} sm={4} md={4} className={classes.bgImage}>
-          {/* <Item className={classes.sideBanner}> */}
-          <TouchAppIcon />
-          <Typography>
-            All the MUI components that you need in a development have been
-            re-design with the new look.
-          </Typography>
-          {/* </Item> */}
+        <Grid xs={2} sm={4} md={4}>
+          <Item className={classes.sideBanner}>
+            <div style={{ color: "white" }}>
+              <TouchAppIcon />
+              <Typography sx={{ padding: "2rem" }}>
+                All the components that you need in a development have been
+                re-design with the new look.
+              </Typography>
+            </div>
+          </Item>
         </Grid>
         <Grid xs={2} sm={4} md={4}>
           {providedServices.slice(0, 2).map((providedService, index) => (
@@ -168,4 +176,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Services;

@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "../Banner/Banner";
 import About from "../../About/About";
-import Services from "../../Skills/Skills";
+import Services from "../../Services/Services";
 import Portfolio from "../../Portfolio/Portfolio";
 import Blog from "../../Blog/Blog";
 import Contact from "../../Contact/Contact";
@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       <Banner />
       <About />
-      {/* <Services /> */}
+      <Services />
       <Portfolio />
       {/* <Blog /> */}
       <Contact />

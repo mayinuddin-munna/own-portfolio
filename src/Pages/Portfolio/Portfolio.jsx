@@ -2,15 +2,13 @@
 // eslint-disable-next-line react/no-unescaped-entities
 import React from "react";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+import { Link } from "react-router-dom";
+import { Container } from "@material-ui/core";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Box, Button, CardActionArea, CardActions } from "@mui/material";
-import { Container } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import CardContent from "@mui/material/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
-
-import alpha from "../../../src/assets/images/alpha.png";
+import { Box, Button, CardActionArea, CardActions } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   portfolio: { margin: "10rem 0" },
@@ -19,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const Portfolio = () => {
   const images = [
     {
-      url: {alpha},
+      url: "https://i.postimg.cc/6TJTpvqh/alpha.png",
       title: "Alpha photography",
       live: "https://alpha-photography-2fcdd.web.app/",
       client: "https://github.com/munnahosssain/Alpha-photography-client",
@@ -28,7 +26,7 @@ const Portfolio = () => {
         "Students have a dedicated role, allowing them to browse and select classes, view their selected classes, and make payments for the classes they have booked on their own selected classes.",
     },
     {
-      url: "../../../src/assets/images/kidsDay.png",
+      url: "https://i.postimg.cc/ZY9c0z09/kidsDay.png",
       title: "Kids Day",
       live: "https://kids-day-97c9b.web.app/",
       client: "https://github.com/munnahosssain/kids-Day-client",
@@ -37,7 +35,7 @@ const Portfolio = () => {
         "Created on a website where children can access and play interactive games designed specifically for their age. Site can promote learning through educational, recreational and fun activities.",
     },
     {
-      url: "../../../src/assets/images/masterchef.png",
+      url: "https://i.postimg.cc/NGWxHCrd/masterchef.png",
       title: "Master Chef",
       live: "https://master-chef-30094.web.app/",
       client: "https://github.com/munnahosssain/Master-chef-client",
@@ -53,10 +51,9 @@ const Portfolio = () => {
     <Container>
       <Typography
         variant="h3"
-        style={{ font: "bold", textAlign: "center", margin: "3rem 0 10px 0" }}
+        style={{ fontWeight: "bold", textAlign: "center", margin: "3rem 0 10px 0" }}
       >
-        
-        What I'm Doing
+        My Project
       </Typography>
       <Typography variant="body1" style={{ textAlign: "center" }}>
         I love what i do. I take great pride in what i do.

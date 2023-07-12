@@ -5,7 +5,7 @@ import React, { Suspense, useMemo, useState } from "react";
 import ReactDOM from "react-dom/client";
 const App = React.lazy(() => import("./App.jsx"));
 const About = React.lazy(() => import("./Pages/About/About.jsx"));
-const Services = React.lazy(() => import("./Pages/Skills/Skills.jsx"));
+const Services = React.lazy(() => import("./Pages/Services/Services.jsx"));
 const Portfolio = React.lazy(() => import("./Pages/Portfolio/Portfolio.jsx"));
 const Blog = React.lazy(() => import("./Pages/Blog/Blog.jsx"));
 const Contact = React.lazy(() => import("./Pages/Contact/Contact.jsx"));
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/skills",
+        path: "/services",
         element: <Services />,
       },
       {

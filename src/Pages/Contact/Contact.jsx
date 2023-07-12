@@ -10,6 +10,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import MarkEmailUnreadIcon from "@mui/icons-material/MarkEmailUnread";
 import LanguageIcon from "@mui/icons-material/Language";
 import { TextField, Button, FormControl, InputLabel } from "@material-ui/core";
+import { FormHelperText } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   contact: {
@@ -57,17 +58,17 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    setTimeout(() => {
-      setMessage(false);
-    }, 5000);
+  const onSubmit = () => {
+    setMessage(true);
+        setTimeout(() => {
+            setMessage(false);
+        }, 8000);
     emailjs
       .sendForm(
-        "service_rrppkuy",
-        "template_jyp87fm",
-        e.target,
-        "4Bw15YiS9HySm79E2"
+        "service_rrppkuy", // email service
+        "template_jyp87fm", // email template
+        form.current,
+        "4Bw15YiS9HySm79E2" // Public Key
       )
       .then((result) => {
         setMessage(true);
@@ -81,7 +82,7 @@ const Contact = () => {
       <Container maxWidth="lg" className={classes.bannerContainer}>
         <div className={classes.textContainer}>
           <Typography variant="h4" style={{ fontWeight: "bolder" }}>
-          Contact information
+            Contact information
           </Typography>
           <Typography
             variant="h6"
@@ -132,9 +133,9 @@ const Contact = () => {
         </div>
         <div>
           <Typography variant="h4" style={{ fontWeight: "bolder" }}>
-          Send us a message
+            Send us a message
           </Typography>
-          <form ref={form} onSubmit={onSubmit}>
+          <form ref={form} onSubmit={handleSubmit(onSubmit)}>
             <div>
               <TextField
                 label="Full Name"
@@ -142,24 +143,25 @@ const Contact = () => {
                 fullWidth
                 name="user_name"
                 margin="normal"
-                {...register("firstName", { required: true, maxLength: 80 })}
-                error={errors.firstName ? true : false}
-                helperText={errors.firstName && "First name is required"}
+                {...register("user_name", { required: true, maxLength: 80 })}
+                error={errors.user_name ? true : false}
+                helperText={errors.user_name && "Full name is required"}
               />
               <TextField
                 label="Email"
                 variant="outlined"
                 margin="normal"
                 fullWidth
+                style={{ color: "inherit" }}
                 name="user_email"
-                {...register("email", {
+                {...register("user_email", {
                   required: true,
                   minLength: 5,
                   pattern: /^\S+@\S+$/i,
                 })}
-                error={errors.email ? true : false}
+                error={errors.user_email ? true : false}
                 helperText={
-                  errors.email && "Please enter a valid email address"
+                  errors.user_email && "Please enter a valid email address"
                 }
               />
             </div>
@@ -170,9 +172,12 @@ const Contact = () => {
                 fullWidth
                 name="user_subject"
                 margin="normal"
-                {...register("subject", { required: true, maxLength: 100 })}
-                error={errors.subject ? true : false}
-                helperText={errors.subject && "Subject is required"}
+                {...register("user_subject", {
+                  required: true,
+                  maxLength: 100,
+                })}
+                error={errors.user_subject ? true : false}
+                helperText={errors.user_subject && "Subject is required"}
               />
               <TextField
                 label="Mobile number"
@@ -181,13 +186,13 @@ const Contact = () => {
                 fullWidth
                 name="user_phone"
                 type="number"
-                {...register("mobileNumber", {
+                {...register("user_phone", {
                   required: true,
                   minLength: 11,
                   maxLength: 14,
                 })}
-                error={errors.mobileNumber ? true : false}
-                helperText={errors.mobileNumber && "Mobile number is required"}
+                error={errors.user_phone ? true : false}
+                helperText={errors.user_phone && "Mobile number is required"}
               />
             </div>
             <div>
@@ -196,19 +201,25 @@ const Contact = () => {
                 sx={{ m: 1 }}
                 variant="standard"
                 margin="normal"
-                name="message"
               >
                 <InputLabel htmlFor="standard-adornment-amount">
                   Message...
                 </InputLabel>
-                <Input id="standard-adornment-amount" />
+                <Input
+                  id="standard-adornment-amount"
+                  {...register("message", { required: true })}
+                  error={errors.message ? true : false}
+                />
+                {errors.message && (
+                  <FormHelperText error>Please enter a message</FormHelperText>
+                )}
               </FormControl>
             </div>
             <div>
               <Button type="submit" variant="contained">
                 Submit
               </Button>
-              {message && <p>Thanks, I'll replay ASAP :)</p>}
+              {message && <p>Thanks, I'll reply ASAP :)</p>}
             </div>
           </form>
         </div>

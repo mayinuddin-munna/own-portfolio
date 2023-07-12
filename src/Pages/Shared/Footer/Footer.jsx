@@ -12,10 +12,6 @@ const Footer = () => {
   const [darkMode, setDarkMode] = useState(false);
   const theme = useTheme();
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
   const customizedTheme = createTheme({
     palette: {
       mode: darkMode ? "dark" : "light",
@@ -76,43 +72,39 @@ const Footer = () => {
           sx={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
         >
           <IconButton
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/mayinuddin-munna-b8b9541a1"
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ color: theme.palette.primary.contrastText }}
+            style={{ textDecoration: "none", color: "inherit" }}
           >
             <LinkedInIcon
-              style={{ margin: "0 5px", color: "black", fontSize: "2.5rem" }}
             />
           </IconButton>
           <IconButton
-            href="https://www.facebook.com/"
+            href="https://www.facebook.com/profile.php?id=100073611545089"
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ color: theme.palette.primary.contrastText }}
+            style={{ textDecoration: "none", color: "inherit" }}
           >
             <FacebookIcon
-              style={{ margin: "0 5px", color: "black", fontSize: "2.5rem" }}
             />
           </IconButton>
           <IconButton
             href="https://github.com/"
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ color: theme.palette.primary.contrastText }}
+            style={{ textDecoration: "none", color: "inherit" }}
           >
             <GitHubIcon
-              style={{ margin: "0 5px", color: "black", fontSize: "2.5rem" }}
             />
           </IconButton>
           <IconButton
             href="https://twitter.com/"
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ color: theme.palette.primary.contrastText }}
+            style={{ textDecoration: "none", color: "inherit" }}
           >
             <TwitterIcon
-              style={{ margin: "0 5px", color: "black", fontSize: "2.5rem" }}
             />
           </IconButton>
         </Container>

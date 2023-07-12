@@ -8,7 +8,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 import RestoreIcon from "@mui/icons-material/Restore";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -16,7 +16,7 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { useTheme } from "@mui/material/styles";
 import { ColorModeContext } from "../../../providers/ThemeContext";
 
-const pages = ["Home", "About", "Skills", "Portfolio", "Blog", "Contact"];
+const pages = ["Home", "About", "Services", "Portfolio", "Blog", "Contact"];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
