@@ -1,16 +1,16 @@
 import "aos/dist/aos.css";
 import emailjs from "@emailjs/browser";
-import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { makeStyles } from "@material-ui/core/styles";
-import { Container, Input, Typography } from "@material-ui/core";
-import sendMail from "../../../src/assets/images/sentMailIcon.svg";
+import { FormHelperText } from "@mui/material";
+import React, { useRef, useState } from "react";
 import PlaceIcon from "@mui/icons-material/Place";
 import PhoneIcon from "@mui/icons-material/Phone";
-import MarkEmailUnreadIcon from "@mui/icons-material/MarkEmailUnread";
+import { makeStyles } from "@material-ui/core/styles";
 import LanguageIcon from "@mui/icons-material/Language";
+import { Container, Input, Typography } from "@material-ui/core";
+import sendMail from "../../../src/assets/images/sentMailIcon.svg";
+import MarkEmailUnreadIcon from "@mui/icons-material/MarkEmailUnread";
 import { TextField, Button, FormControl, InputLabel } from "@material-ui/core";
-import { FormHelperText } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   contact: {
@@ -60,9 +60,9 @@ const Contact = () => {
 
   const onSubmit = () => {
     setMessage(true);
-        setTimeout(() => {
-            setMessage(false);
-        }, 8000);
+    setTimeout(() => {
+      setMessage(false);
+    }, 8000);
     emailjs
       .sendForm(
         "service_rrppkuy", // email service
@@ -77,30 +77,60 @@ const Contact = () => {
       });
   };
 
+  const [darkModeActive, setDarkModeActive] = useState(false);
+
+  const handleDarkModeToggle = () => {
+    setDarkModeActive(!darkModeActive);
+  };
+
   return (
     <div className={classes.contact}>
       <Container maxWidth="lg" className={classes.bannerContainer}>
         <div className={classes.textContainer}>
-          <Typography variant="h4" style={{ fontWeight: "bolder" }}>
+          <Typography
+            variant="h4"
+            style={{
+              fontWeight: "bolder",
+              marginBottom: "2rem",
+              borderBottom: "3px solid red",
+              textAlign: "center",
+            }}
+          >
             Contact information
           </Typography>
           <Typography
-            variant="h6"
+            variant="h5"
+            mt={2}
+            style={{
+              display: "flex",
+              marginTop: "1rem",
+              alignItems: "center",
+              fontWeight: "bold",
+              fontSize: "2rem",
+              letterSpacing: "5px",
+            }}
+          >
+            Mayinuddin Munna
+          </Typography>
+          <Typography
+            variant="body1"
+            mt={2}
+            style={{
+              display: "flex",
+              fontSize: "1.5rem",
+              alignItems: "center",
+              marginTop: ".3rem",
+            }}
+          >
+            Frontend Web Developer.
+          </Typography>
+          <Typography
+            variant="body1"
             component="h1"
             gutterBottom
             style={{
               display: "flex",
               margin: "1rem 0",
-              alignItems: "center",
-            }}
-          >
-            <PlaceIcon sx={{ marginRight: 1 }} /> Address: 1207 - Baitul Aman
-            Housing, Adabor Dhaka
-          </Typography>
-          <Typography
-            variant="body1"
-            style={{
-              display: "flex",
               alignItems: "center",
             }}
           >
@@ -111,13 +141,23 @@ const Contact = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              margin: "1rem 0",
             }}
           >
             <MarkEmailUnreadIcon sx={{ marginRight: 1 }} />
             Email: mayinuddin.munna@gmail.com
           </Typography>
           <Typography
+            variant="body1"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              margin: "1rem 0",
+            }}
+          >
+            <PlaceIcon sx={{ marginRight: 1 }} /> Address: 1207 - Baitul Aman
+            Housing, Adabor Dhaka
+          </Typography>
+          {/* <Typography
             variant="body1"
             mt={2}
             style={{
@@ -128,14 +168,18 @@ const Contact = () => {
           >
             <LanguageIcon sx={{ marginRight: 1 }} />
             Website: mayinuddinmunna.web.app
-          </Typography>
+          </Typography> */}
           <img src={sendMail} alt="Portfolio image" className={classes.image} />
         </div>
         <div>
           <Typography variant="h4" style={{ fontWeight: "bolder" }}>
-            Send us a message
+            Send me a message.
           </Typography>
-          <form ref={form} onSubmit={handleSubmit(onSubmit)}>
+          <form
+            ref={form}
+            onSubmit={handleSubmit(onSubmit)}
+            className={darkModeActive ? "dark-mode" : "light-mode"}
+          >
             <div>
               <TextField
                 label="Full Name"
@@ -146,6 +190,12 @@ const Contact = () => {
                 {...register("user_name", { required: true, maxLength: 80 })}
                 error={errors.user_name ? true : false}
                 helperText={errors.user_name && "Full name is required"}
+                InputProps={{
+                  style: {
+                    color: darkModeActive ? "#ffffff" : "#000000",
+                    backgroundColor: darkModeActive ? "#333333" : "#ffffff",
+                  },
+                }}
               />
               <TextField
                 label="Email"
@@ -163,6 +213,12 @@ const Contact = () => {
                 helperText={
                   errors.user_email && "Please enter a valid email address"
                 }
+                InputProps={{
+                  style: {
+                    color: darkModeActive ? "#ffffff" : "#000000",
+                    backgroundColor: darkModeActive ? "#333333" : "#ffffff",
+                  },
+                }}
               />
             </div>
             <div>
@@ -178,6 +234,12 @@ const Contact = () => {
                 })}
                 error={errors.user_subject ? true : false}
                 helperText={errors.user_subject && "Subject is required"}
+                InputProps={{
+                  style: {
+                    color: darkModeActive ? "#ffffff" : "#000000",
+                    backgroundColor: darkModeActive ? "#333333" : "#ffffff",
+                  },
+                }}
               />
               <TextField
                 label="Mobile number"
@@ -193,28 +255,45 @@ const Contact = () => {
                 })}
                 error={errors.user_phone ? true : false}
                 helperText={errors.user_phone && "Mobile number is required"}
+                InputProps={{
+                  style: {
+                    color: darkModeActive ? "#ffffff" : "#000000",
+                    backgroundColor: darkModeActive ? "#333333" : "#ffffff",
+                  },
+                }}
               />
             </div>
-            <div>
-              <FormControl
-                fullWidth
-                sx={{ m: 1 }}
-                variant="standard"
-                margin="normal"
+            <FormControl
+              fullWidth
+              sx={{ m: 1 }}
+              margin="normal"
+              style={{
+                backgroundColor: "white",
+                borderRadius: "5px",
+                padding: "15px",
+              }}
+            >
+              <InputLabel
+                htmlFor="standard-adornment-amount"
+                style={{ padding: "15px" }}
               >
-                <InputLabel htmlFor="standard-adornment-amount">
-                  Message...
-                </InputLabel>
-                <Input
-                  id="standard-adornment-amount"
-                  {...register("message", { required: true })}
-                  error={errors.message ? true : false}
-                />
-                {errors.message && (
-                  <FormHelperText error>Please enter a message</FormHelperText>
-                )}
-              </FormControl>
-            </div>
+                Message...
+              </InputLabel>
+              <Input
+                id="standard-adornment-amount"
+                {...register("message", { required: true })}
+                error={errors.message ? true : false}
+                InputProps={{
+                  style: {
+                    color: darkModeActive ? "#ffffff" : "#000000",
+                    backgroundColor: darkModeActive ? "#333333" : "#ffffff",
+                  },
+                }}
+              />
+              {errors.message && (
+                <FormHelperText error>Please enter a message</FormHelperText>
+              )}
+            </FormControl>
             <div>
               <Button type="submit" variant="contained">
                 Submit
