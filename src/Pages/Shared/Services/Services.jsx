@@ -73,7 +73,7 @@ const Navbar = () => {
           <Typography
             variant="h5"
             noWrap
-            component={Link}
+            // component={Link}
             to="/"
             sx={{
               mr: 2,
@@ -117,9 +117,9 @@ const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {pages.map((page,index) => (
                 <Button
-                  key={page}
+                  key={index}
                   component={Link}
                   to={`/${page.toLowerCase()}`}
                   icon={<RestoreIcon />}

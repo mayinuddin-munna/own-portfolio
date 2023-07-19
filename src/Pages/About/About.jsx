@@ -1,13 +1,34 @@
+import "swiper/css";
 import React from "react";
 import "aos/dist/aos.css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Container, Typography } from "@material-ui/core";
+import mongodb from "../../assets/images/mongodb.png";
+import react from "../../assets/images/react.png";
+import node from "../../assets/images/node-js.png";
+import figma from "../../assets/images/figma--v1.png";
 import banner from "../../../src/assets/images/formal.png";
-import { Link } from "react-router-dom";
+import html from "../../../src/assets/images/html5.png";
+import css from "../../../src/assets/images/css3.png";
+import javascript from "../../../src/assets/images/javascript.png";
+import express from "../../../src/assets/images/express-js.png";
+import git from "../../../src/assets/images/git.png";
+import mui from "../../../src/assets/images/mui.png";
+import next from "../../../src/assets/images/next-js.png";
+import typeScript from "../../../src/assets/images/typescript.png";
+import redux from "../../../src/assets/images/redux.png";
+import jwt from "../../../src/assets/images/jwt.png";
+import tailwind from "../../../src/assets/images/tailwind.png";
+import firebase from "../../../src/assets/images/firebase.png";
 
 const useStyles = makeStyles((theme) => ({
-  about:{
-    margin:'11rem 0'
+  about: {
+    margin: "7rem 0",
   },
   bannerContainer: {
     margin: "",
@@ -38,6 +59,10 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     borderRadius: theme.spacing(50),
   },
+  technology: {
+    textAlign: "center",
+    marginTop: "5rem",
+  },
 }));
 
 const About = () => {
@@ -47,8 +72,15 @@ const About = () => {
     <div className={classes.about}>
       <Container maxWidth="lg" className={classes.bannerContainer}>
         <div className={classes.textContainer}>
-          <Typography variant="h3">About Me</Typography>
-          <Typography variant="h6" component="h1" gutterBottom>
+          <Typography variant="h3" style={{ fontWeight: "bold" }}>
+            About Me
+          </Typography>
+          <Typography
+            variant="h6"
+            component="h1"
+            gutterBottom
+            style={{ fontWeight: "bold" }}
+          >
             Native Design & Front-End developer.
           </Typography>
           <Typography variant="body1">
@@ -61,11 +93,11 @@ const About = () => {
             React.js framework, which has allowed me to develop dynamic and
             interactive user interfaces.
           </Typography>
-          <div>
-            <Button className="button mr-1">
-              <Link to="/contact">Hire me</Link>
+          <Link to="/contact">
+            <Button variant="contained" size="large" style={{marginTop:"10px"}}>
+              Hire me
             </Button>
-          </div>
+          </Link>
         </div>
         <div className={classes.imageContainer}>
           <img
@@ -76,6 +108,77 @@ const About = () => {
             className={classes.image}
           />
         </div>
+      </Container>
+      <Container className={classes.technology}>
+        <div style={{ margin: "1rem 0" }}>
+          <Typography variant="h3" style={{ fontWeight: "bold" }}>
+            Technology Use
+          </Typography>
+          <Typography variant="h6">
+            I code with precision and creativity.
+          </Typography>
+        </div>
+        <Swiper
+          slidesPerView={5}
+          spaceBetween={150}
+          freeMode={true}
+          // Mousewheel={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay, FreeMode, Pagination]}
+          // className="mySwiper"
+        >
+          <SwiperSlide>
+            <img src={html} alt="html" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={css} alt="css" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={javascript} alt="javascript" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={react} alt="react" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={redux} alt="redux" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={typeScript} alt="typeScript" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={next} alt="next" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={tailwind} alt="tailwind" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={mui} alt="mui" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={node} alt="node" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={mongodb} alt="mongodb" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={express} alt="express" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={firebase} alt="firebase" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={git} alt="git" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={jwt} alt="jwt" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={figma} alt="figma" />
+          </SwiperSlide>
+        </Swiper>
       </Container>
     </div>
   );

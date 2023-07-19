@@ -29,7 +29,8 @@
     "react-scroll-up": "^1.4.0",
     "react-slick": "^0.29.0",
     "react-spring": "^9.7.2",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "swiper": "^10.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

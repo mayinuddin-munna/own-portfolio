@@ -7,6 +7,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
   return (
     <footer>
       <Container
@@ -75,7 +76,7 @@ const Footer = () => {
           <GitHubIcon />
         </IconButton>
         <IconButton
-          href="https://twitter.com/"
+          href="https://twitter.com/mohamad_munna"
           target="_blank"
           rel="noopener noreferrer"
           style={{ textDecoration: "none", color: "inherit" }}
