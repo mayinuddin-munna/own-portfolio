@@ -7,24 +7,6 @@ body {
   font-size: 0;
 }
 
-@keyframes rotate {
-  0%,
-  100% {
-    transform: rotate(5deg);
-  }
-  20% {
-    transform: rotate(-5deg);
-  }
-  80% {
-    transform: rotate(5deg);
-  }
-}
-
-.css-mxi1ow {
-  /* animation: rotate 22s linear infinite; */
-  animation-delay: 220s;
-}
-
 .swiper-slide img {
   display: block;
   width: 100%;

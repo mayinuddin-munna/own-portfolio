@@ -60,13 +60,6 @@ const Services = () => {
   const providedServices = [
     {
       id: 1,
-      image: <TimerIcon />,
-      title: "Save Time & Money",
-      description:
-        "Creating your design from scratch with dedicated designers can be very expensive. Start with our Design System.",
-    },
-    {
-      id: 1,
       image: <DevicesIcon />,
       title: "Fully Responsive",
       description:
@@ -86,6 +79,13 @@ const Services = () => {
       description:
         "6 months of free technical support to help you build your website faster",
     },
+    {
+      id: 1,
+      image: <TimerIcon />,
+      title: "Save Time & Money",
+      description:
+        "Creating your design from scratch with dedicated designers can be very expensive. Start with our Design System.",
+    },
   ];
 
   const classes = useStyles();
@@ -93,14 +93,18 @@ const Services = () => {
     <Container className={classes.skills}>
       <Typography
         variant="h3"
-        style={{ fontWeight: "bold", textAlign: "center", margin: "3rem 0 10px 0" }}
+        style={{
+          fontWeight: "bold",
+          textAlign: "center",
+          margin: "3rem 0 10px 0",
+        }}
       >
         What I'm Doing
       </Typography>
       <Typography variant="body1" style={{ textAlign: "center" }}>
         I love what i do. I take great pride in what i do.
       </Typography>
-      <Box sx={{ flexGrow: 1, margin:"2rem 0" }}>
+      <Box sx={{ flexGrow: 1, margin: "2rem 0" }}>
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}

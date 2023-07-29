@@ -120,7 +120,6 @@ const About = () => {
           </Typography>
           <Typography variant="h6">Things ths i'm good at.</Typography>
         </Container>
-        {/* <Container> */}
         <Swiper
           slidesPerView={5}
           spaceBetween={150}
@@ -180,7 +179,6 @@ const About = () => {
             <img src={figma} alt="figma" />
           </SwiperSlide>
         </Swiper>
-        {/* </Container> */}
       </Container>
     </div>
   );
