@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
   nameWeight: {
     marginBottom: "10px",
     fontWeight: 600,
+    // fontFamily: 'Wallpoet', "cursive"
   },
   imageContainer: {
     flex: 1,

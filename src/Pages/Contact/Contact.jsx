@@ -79,10 +79,6 @@ const Contact = () => {
 
   const [darkModeActive, setDarkModeActive] = useState(false);
 
-  const handleDarkModeToggle = () => {
-    setDarkModeActive(!darkModeActive);
-  };
-
   return (
     <div className={classes.contact}>
       <Container maxWidth="lg" className={classes.bannerContainer}>
@@ -154,21 +150,9 @@ const Contact = () => {
               margin: "1rem 0",
             }}
           >
-            <PlaceIcon sx={{ marginRight: 1 }} /> Address: 1207 - Baitul Aman
-            Housing, Adabor Dhaka
+            <PlaceIcon sx={{ marginRight: 1 }} /> Address: Baitul Aman
+            Housing, Adabor Dhaka - 1207
           </Typography>
-          {/* <Typography
-            variant="body1"
-            mt={2}
-            style={{
-              display: "flex",
-              marginBottom: "2rem",
-              alignItems: "center",
-            }}
-          >
-            <LanguageIcon sx={{ marginRight: 1 }} />
-            Website: mayinuddinmunna.web.app
-          </Typography> */}
           <img src={sendMail} alt="Portfolio image" className={classes.image} />
         </div>
         <div>

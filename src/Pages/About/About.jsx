@@ -69,7 +69,7 @@ const About = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.about}>
+    <div className={`${classes.about}`}>
       <Container maxWidth="lg" className={classes.bannerContainer}>
         <div className={classes.textContainer}>
           <Typography variant="h3" style={{ fontWeight: "bold" }}>
@@ -94,7 +94,11 @@ const About = () => {
             interactive user interfaces.
           </Typography>
           <Link to="/contact">
-            <Button variant="contained" size="large" style={{marginTop:"10px"}}>
+            <Button
+              variant="contained"
+              size="large"
+              style={{ marginTop: "10px" }}
+            >
               Hire me
             </Button>
           </Link>
@@ -109,26 +113,23 @@ const About = () => {
           />
         </div>
       </Container>
-      <Container className={classes.technology}>
-        <div style={{ margin: "1rem 0" }}>
+      <Container className={`${classes.technology} skill-bg`}>
+        <Container style={{ margin: "2rem 0" }}>
           <Typography variant="h3" style={{ fontWeight: "bold" }}>
-            Technology Use
+            Technology I'm using.
           </Typography>
-          <Typography variant="h6">
-            I code with precision and creativity.
-          </Typography>
-        </div>
+          <Typography variant="h6">Things ths i'm good at.</Typography>
+        </Container>
+        {/* <Container> */}
         <Swiper
           slidesPerView={5}
           spaceBetween={150}
           freeMode={true}
-          // Mousewheel={true}
           autoplay={{
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false,
           }}
           modules={[Autoplay, FreeMode, Pagination]}
-          // className="mySwiper"
         >
           <SwiperSlide>
             <img src={html} alt="html" />
@@ -179,6 +180,7 @@ const About = () => {
             <img src={figma} alt="figma" />
           </SwiperSlide>
         </Swiper>
+        {/* </Container> */}
       </Container>
     </div>
   );

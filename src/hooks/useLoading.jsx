@@ -9,6 +9,7 @@ const useLoading = () => {
     }, 30000);
     return () => clearTimeout(timeOut);
   }, []);
+  
   return (
     <div>
       {showLoader ? (

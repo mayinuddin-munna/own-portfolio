@@ -31,3 +31,26 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+.skill-bg {
+  padding: 1rem;
+  background: fixed;
+  background-size: 65%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, #00000080, #00000080),
+    url("../src/assets/images/skillsBg.png");
+}
+
+@media screen and (max-width: 1024px) {
+  .skill-bg {
+    padding: 1rem;
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .skill-bg {
+    background-size: 100%;
+  }
+}
