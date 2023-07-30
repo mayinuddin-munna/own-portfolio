@@ -1,5 +1,3 @@
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Lottie from "lottie-react";
 import React, { useEffect } from "react";
 import ScrollToTop from "react-scroll-up";
@@ -7,7 +5,6 @@ import SouthIcon from "@mui/icons-material/South";
 import banner from "../../../../public/banner.json";
 import { makeStyles } from "@material-ui/core/styles";
 import canvas from "../../../assets/images/canva.png";
-import bannerImg from "../../../assets/images/zone_landing.png";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import { Button, Container, Typography } from "@material-ui/core";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
@@ -62,9 +59,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Banner = () => {
   const classes = useStyles();
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   return (
     <div className={classes.banner}>
@@ -100,7 +94,7 @@ const Banner = () => {
           </div>
           <div className={classes.imageContainer}>
             <Lottie
-              style={{ width: "29.1rem" }}
+              style={{ width: "28.5rem" }}
               animationData={banner}
               loop={true}
             />

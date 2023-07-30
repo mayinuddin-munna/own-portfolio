@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
 import { Box, Button, CardActionArea, CardActions } from "@mui/material";
+import Zoom from 'react-reveal/Zoom';
 
 const useStyles = makeStyles((theme) => ({
   portfolio: { margin: "10rem 0" },
@@ -51,55 +52,66 @@ const Portfolio = () => {
     <Container>
       <Typography
         variant="h3"
-        style={{ fontWeight: "bold", textAlign: "center", margin: "3rem 0 10px 0" }}
+        style={{
+          fontWeight: "bold",
+          textAlign: "center",
+          margin: "3rem 0 10px 0",
+        }}
       >
         My Project
       </Typography>
       <Typography variant="body1" style={{ textAlign: "center" }}>
         I love what i do. I take great pride in what i do.
       </Typography>
-      <Box
-        className={classes.portfolio}
-        sx={{ display: "flex", flexWrap: "wrap", minWidth: 300, width: "100%" }}
-      >
-        {images.map((image) => (
-          <Card key={image.title} sx={{ maxWidth: 378, margin: "1rem" }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="200"
-                image={image.url}
-                alt="Alpha photography banner"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {image.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {image.descriptions}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-            <CardActions>
-              <Button size="small" color="primary">
-                <Link to={image.live} style={{ textDecoration: "none" }}>
-                  Live
-                </Link>
-              </Button>
-              <Button size="small" color="primary">
-                <Link to={image.client} style={{ textDecoration: "none" }}>
-                  Github Client
-                </Link>
-              </Button>
-              <Button size="small" color="primary">
-                <Link to={image.server} style={{ textDecoration: "none" }}>
-                  Github Server
-                </Link>
-              </Button>
-            </CardActions>
-          </Card>
-        ))}
-      </Box>
+      <Zoom cascade>
+        <Box
+          className={classes.portfolio}
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            minWidth: 300,
+            width: "100%",
+          }}
+        >
+          {images.map((image) => (
+            <Card key={image.title} sx={{ maxWidth: 378, margin: "1rem" }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={image.url}
+                  alt="Alpha photography banner"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {image.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {image.descriptions}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary">
+                  <Link to={image.live} style={{ textDecoration: "none" }}>
+                    Live
+                  </Link>
+                </Button>
+                <Button size="small" color="primary">
+                  <Link to={image.client} style={{ textDecoration: "none" }}>
+                    Github Client
+                  </Link>
+                </Button>
+                <Button size="small" color="primary">
+                  <Link to={image.server} style={{ textDecoration: "none" }}>
+                    Github Server
+                  </Link>
+                </Button>
+              </CardActions>
+            </Card>
+          ))}
+        </Box>
+      </Zoom>
     </Container>
   );
 };

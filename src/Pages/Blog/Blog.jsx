@@ -1,10 +1,14 @@
 import React from 'react';
+import Bounce from 'react-reveal/Bounce';
+import { Container } from "@material-ui/core";
 
 const Blog = () => {
     return (
-        <div>
-            <h1>Blog</h1>
-        </div>
+        <Container>
+            <Bounce cascade>
+            <h1>Blog Coming soon..</h1>
+            </Bounce>
+        </Container>
     );
 };
 
