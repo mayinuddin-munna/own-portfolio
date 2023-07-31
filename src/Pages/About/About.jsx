@@ -200,7 +200,7 @@ const About = () => {
         >
           {skills.map((skill) => (
             <SwiperSlide key={skill.id}>
-              <img src={skill.image} alt="html" />
+              <img src={skill.image} alt={skill.image} />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -94,9 +94,9 @@ const Banner = () => {
           </div>
           <div className={classes.imageContainer}>
             <Lottie
-              style={{ width: "28.5rem" }}
+              style={{ height: "29.5rem" }}
               animationData={banner}
-              loop={true}
+              // loop={true}
             />
           </div>
         </Container>
