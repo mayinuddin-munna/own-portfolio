@@ -5,26 +5,24 @@ import SyncIcon from "@mui/icons-material/Sync";
 import Grid from "@mui/material/Unstable_Grid2";
 import TimerIcon from "@mui/icons-material/Timer";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography } from "@mui/material";
+import { Container, Divider, Typography } from "@mui/material";
 import DevicesIcon from "@mui/icons-material/Devices";
-import TouchAppIcon from "@mui/icons-material/TouchApp";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { experimentalStyled as styled } from "@mui/material/styles";
+import AutoCount from "../../Components/AutoCount";
+import { Card } from "@mui/material";
+import TouchAppIcon from "@mui/icons-material/TouchApp";
 
 const useStyles = makeStyles((theme) => ({
-  skills: {
-    margin: "3rem 0",
-  },
   sideBanner: {
     display: "flex",
     height: "30rem",
-    marginTop: "1rem",
     alignItems: "center",
     backgroundSize: "cover",
     justifyContent: "center",
     backgroundPosition: "center",
     backgroundImage:
-      'linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../../src/assets/images/rotateFont.jpeg")',
+      'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("../../../src/assets/images/rotateFont.jpeg")',
   },
 }));
 
@@ -36,7 +34,9 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const Services = () => {
+function Services() {
+  const classes = useStyles();
+
   const data = [
     {
       id: 200,
@@ -84,100 +84,108 @@ const Services = () => {
       image: <TimerIcon />,
       title: "Save Time & Money",
       description:
-        "Creating your design from scratch with dedicated designers can be very expensive. Start with our Design System.",
+        "Creating your design from scratch with dedicated designers can be very expensive.",
     },
   ];
 
-  const classes = useStyles();
   return (
-    <Container className={classes.skills}>
-      <Typography
-        variant="h3"
-        style={{
-          fontWeight: "bold",
-          textAlign: "center",
-          margin: "3rem 0 10px 0",
-        }}
-      >
-        What I'm Doing
-      </Typography>
-      <Typography variant="body1" style={{ textAlign: "center" }}>
-        I love what i do. I take great pride in what i do.
-      </Typography>
-      <Box sx={{ flexGrow: 1, margin: "2rem 0" }}>
-        <Grid
-          container
-          spacing={{ xs: 2, md: 3 }}
-          columns={{ xs: 2, sm: 8, md: 12 }}
+    <Container>
+      <Box component="section" py={12}>
+        <Typography
+          variant="h3"
+          style={{
+            fontWeight: "bold",
+            textAlign: "center",
+          }}
         >
-          {data.map((dt, index) => (
-            <Grid xs={2} sm={4} md={4} key={index}>
-              <Item>
-                <Typography
-                  variant="h3"
-                  gutterBottom
-                  sx={{ color: "#1A73E8", fontWeight: "700" }}
-                >
-                  {dt.id}+
+          What I'm Doing
+        </Typography>
+        <Typography variant="body1" style={{ textAlign: "center" }}>
+          I love what i do. I take great pride in what i do.
+        </Typography>
+        <Box sx={{ flexGrow: 1, margin: "3rem 0" }}>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 2.5 }}
+            columns={{ xs: 2, sm: 4, md: 12 }}
+          >
+            {data.map((dt) => (
+              <Grid xs={2} sm={4} md={4} key={dt.id}>
+                <Item>
+                  <Typography
+                    variant="h4"
+                    gutterBottom
+                    sx={{
+                      color: "#1A73E8",
+                      fontWeight: "700",
+                      margin: "-2rem",
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <AutoCount endValue={dt.id} />+
+                    </div>
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    gutterBottom
+                    sx={{ fontWeight: "700" }}
+                  >
+                    {dt.title}
+                  </Typography>
+                  <Typography>{dt.description}</Typography>
+                </Item>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+        <Grid container spacing={2} sx={{ mt: -5 }}>
+          <Grid item xs={12} md={4}>
+            <Item className={classes.sideBanner}>
+              <div>
+                <TouchAppIcon style={{ color: "#1A73E8" }} />
+                <Typography sx={{ padding: "2rem", color: "#fff" }}>
+                  All the components that you need in a development have been
+                  re-design with the new look.
                 </Typography>
-                <Typography
-                  variant="h5"
-                  gutterBottom
-                  sx={{ fontWeight: "700" }}
-                >
-                  {dt.title}
-                </Typography>
-                <Typography>{dt.description}</Typography>
-              </Item>
+              </div>
+            </Item>
+          </Grid>
+          <Grid md={7.8} sx={{ mx: { xs: 0, md: 1.2 } }}>
+            <Grid
+              container
+              spacing={{ xs: 2, md: 3 }}
+              columns={{ xs: 2, sm: 4, md: 8 }}
+            >
+              {providedServices.map((providedService) => (
+                <Grid xs={2} sm={2} md={4} key={providedService.id}>
+                  <Item style={{ height: "14.2rem" }}>
+                    <Typography sx={{ color: "#1A73E8", fontSize: "3rem" }}>
+                      {providedService.image}
+                    </Typography>
+                    <Typography
+                      variant="h5"
+                      gutterBottom
+                      sx={{ fontWeight: "700" }}
+                    >
+                      {providedService.title}
+                    </Typography>
+                    <Typography>{providedService.description}</Typography>
+                  </Item>
+                </Grid>
+              ))}
             </Grid>
-          ))}
+          </Grid>
         </Grid>
+        <Divider sx={{ my: { xs: 2, sm: 8 }, mx: 12 }} />
       </Box>
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 2, sm: 8, md: 12 }}
-      >
-        <Grid xs={2} sm={4} md={4}>
-          <Item className={classes.sideBanner}>
-            <div style={{ color: "white" }}>
-              <TouchAppIcon />
-              <Typography sx={{ padding: "2rem" }}>
-                All the components that you need in a development have been
-                re-design with the new look.
-              </Typography>
-            </div>
-          </Item>
-        </Grid>
-        <Grid xs={2} sm={4} md={4}>
-          {providedServices.slice(0, 2).map((providedService, index) => (
-            <Item key={index} style={{ marginTop: "1rem", height: "14.5rem" }}>
-              <Typography sx={{ color: "#1A73E8", fontSize: "3rem" }}>
-                {providedService.image}
-              </Typography>
-              <Typography variant="h5" gutterBottom sx={{ fontWeight: "700" }}>
-                {providedService.title}
-              </Typography>
-              <Typography>{providedService.description}</Typography>
-            </Item>
-          ))}
-        </Grid>
-        <Grid xs={2} sm={4} md={4}>
-          {providedServices.slice(2, 4).map((providedService, index) => (
-            <Item key={index} style={{ marginTop: "1rem", height: "14.5rem" }}>
-              <Typography sx={{ color: "#1A73E8", fontSize: "3rem" }}>
-                {providedService.image}
-              </Typography>
-              <Typography variant="h5" gutterBottom sx={{ fontWeight: "700" }}>
-                {providedService.title}
-              </Typography>
-              <Typography>{providedService.description}</Typography>
-            </Item>
-          ))}
-        </Grid>
-      </Grid>
     </Container>
   );
-};
+}
 
 export default Services;

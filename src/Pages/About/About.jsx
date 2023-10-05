@@ -1,14 +1,16 @@
 import "swiper/css";
-import React from "react";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import Zoom from "react-reveal/Zoom";
 import Slide from "react-reveal/Slide";
 import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 import { Button, Container, Typography } from "@material-ui/core";
+import { useDencrypt } from "use-dencrypt-effect";
+
 import react from "../../assets/images/react.png";
 import node from "../../assets/images/node-js.png";
 import mui from "../../../src/assets/images/mui.png";
@@ -26,6 +28,8 @@ import tailwind from "../../../src/assets/images/tailwind.png";
 import express from "../../../src/assets/images/express-js.png";
 import javascript from "../../../src/assets/images/javascript.png";
 import typeScript from "../../../src/assets/images/typescript.png";
+import SectionTitle from "../../Components/SectionTitle";
+import HeroText from "../../Components/HeroText";
 
 const useStyles = makeStyles((theme) => ({
   about: {
@@ -68,6 +72,17 @@ const useStyles = makeStyles((theme) => ({
 
 const About = () => {
   const classes = useStyles();
+  const [result, setResult] = useDencrypt("About Me");
+
+  useEffect(() => {
+    const loop = async () => {
+      for (let i = 0; i < 1; i++) {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        await setResult(result);
+      }
+    };
+    loop();
+  }, []);
 
   const skills = [
     {
@@ -140,10 +155,15 @@ const About = () => {
     <div className={`${classes.about}`}>
       <Container maxWidth="lg" className={classes.bannerContainer}>
         <div className={classes.textContainer}>
-          <Typography variant="h3" style={{ fontWeight: "bold" }}>
-            About Me
+          <Typography
+            variant="h3"
+            style={{ fontWeight: "bold", margin: "1rem 0" }}
+          >
+            {/* {result} */}
+            <SectionTitle title="About Me" subtitle="Introduction" />
+            {/* <HeroText /> */}
           </Typography>
-          <Zoom left cascade>
+          <Zoom cascade>
             <Typography
               variant="h6"
               component="h1"
@@ -176,6 +196,7 @@ const About = () => {
           </Link>
         </div>
         <div className={classes.imageContainer}>
+          {/* <ImageSlider images={memoji.images} /> */}
           <Zoom cascade>
             <img src={banner} alt="Portfolio image" className={classes.image} />
           </Zoom>
