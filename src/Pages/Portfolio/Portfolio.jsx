@@ -1,118 +1,80 @@
-/* eslint-disable react/no-unescaped-entities */
-// eslint-disable-next-line react/no-unescaped-entities
-import React from "react";
-import Card from "@mui/material/Card";
-import { Link } from "react-router-dom";
-import { Container } from "@material-ui/core";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import CardContent from "@mui/material/CardContent";
-import { makeStyles } from "@material-ui/core/styles";
-import { Box, Button, CardActionArea, CardActions } from "@mui/material";
-import Zoom from 'react-reveal/Zoom';
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import { Box, Card } from "@mui/material";
 
-const useStyles = makeStyles((theme) => ({
-  portfolio: { margin: "10rem 0" },
-}));
+// Images
+import author1 from "../../assets/images/banner1.png";
+import author2 from "../../assets/images/banner1.png";
+import author3 from "../../assets/images/banner1.png";
 
 const Portfolio = () => {
-  const images = [
-    {
-      url: "https://i.postimg.cc/6TJTpvqh/alpha.png",
-      title: "Alpha photography",
-      live: "https://alpha-photography-2fcdd.web.app/",
-      client: "https://github.com/munnahosssain/Alpha-photography-client",
-      server: "https://github.com/munnahosssain/Alpha-photography-server",
-      descriptions:
-        "Students have a dedicated role, allowing them to browse and select classes, view their selected classes, and make payments for the classes they have booked on their own selected classes.",
-    },
-    {
-      url: "https://i.postimg.cc/ZY9c0z09/kidsDay.png",
-      title: "Kids Day",
-      live: "https://kids-day-97c9b.web.app/",
-      client: "https://github.com/munnahosssain/kids-Day-client",
-      server: "https://github.com/munnahosssain/kids-Day-server",
-      descriptions:
-        "Created on a website where children can access and play interactive games designed specifically for their age. Site can promote learning through educational, recreational and fun activities.",
-    },
-    {
-      url: "https://i.postimg.cc/NGWxHCrd/masterchef.png",
-      title: "Master Chef",
-      live: "https://master-chef-30094.web.app/",
-      client: "https://github.com/munnahosssain/Master-chef-client",
-      server: "https://github.com/munnahosssain/Master-Chef-server",
-      descriptions:
-        "Top Chefs Network: Connect with renowned chefs, explore their profiles, and enhance your cooking experience, our collection of recipes is designed to satisfy the most discerning palate.",
-    },
-  ];
-
-  const classes = useStyles();
+  const post1 =
+    "https://images.unsplash.com/photo-1592489637182-8c172d6d7826?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2300&q=80";
+  const post2 =
+    "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80";
+  const post3 =
+    "https://images.unsplash.com/photo-1444877466744-dc2f2af2b931?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80";
 
   return (
-    <Container>
-      <Typography
-        variant="h3"
-        style={{
-          fontWeight: "bold",
-          textAlign: "center",
-          margin: "3rem 0 10px 0",
-        }}
-      >
-        My Project
-      </Typography>
-      <Typography variant="body1" style={{ textAlign: "center" }}>
-        I love what i do. I take great pride in what i do.
-      </Typography>
-      <Zoom cascade>
-        <Box
-          className={classes.portfolio}
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            minWidth: 300,
-            width: "100%",
-          }}
-        >
-          {images.map((image) => (
-            <Card key={image.title} sx={{ maxWidth: 378, margin: "1rem" }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={image.url}
-                  alt="Alpha photography banner"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {image.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {image.descriptions}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  <Link to={image.live} style={{ textDecoration: "none" }}>
-                    Live
-                  </Link>
-                </Button>
-                <Button size="small" color="primary">
-                  <Link to={image.client} style={{ textDecoration: "none" }}>
-                    Github Client
-                  </Link>
-                </Button>
-                <Button size="small" color="primary">
-                  <Link to={image.server} style={{ textDecoration: "none" }}>
-                    Github Server
-                  </Link>
-                </Button>
-              </CardActions>
-            </Card>
-          ))}
-        </Box>
-      </Zoom>
-    </Container>
+    <Box component="section" py={7}>
+      <Container>
+        <Grid container spacing={3}>
+          <Grid item xs={12} lg={4} mb={{ xs: 3, lg: 0 }}>
+            <Card
+              image={post1}
+              category={{ color: "primary", label: "house" }}
+              title="Shared Coworking"
+              description="Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons."
+              author={{
+                image: author1,
+                name: "Mathew Glock",
+                date: "Posted on 28 February",
+              }}
+              action={{
+                type: "internal",
+                route: "/pages/blogs/single-article",
+              }}
+            >
+              Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons.
+              </Card>
+          </Grid>
+          <Grid item xs={12} lg={4} mb={{ xs: 3, lg: 0 }}>
+            <Card
+              image={post2}
+              category={{ color: "info", label: "house" }}
+              title="Really Housekeeping"
+              description="Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons."
+              author={{
+                image: author2,
+                name: "Mathew Glock",
+                date: "Posted on 28 February",
+              }}
+              action={{
+                type: "internal",
+                route: "/pages/blogs/single-article",
+              }}
+            />
+          </Grid>
+          <Grid item xs={12} lg={4} mb={{ xs: 3, lg: 0 }}>
+            <Card
+              image={post3}
+              category={{ color: "warning", label: "house" }}
+              title="Shared Coworking"
+              description="Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons."
+              author={{
+                image: author3,
+                name: "Mathew Glock",
+                date: "Posted on 28 February",
+              }}
+              action={{
+                type: "internal",
+                route: "/pages/blogs/single-article",
+              }}
+            />
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 

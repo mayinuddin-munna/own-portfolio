@@ -73,7 +73,7 @@ const Navbar = () => {
           <Typography
             variant="h5"
             noWrap
-            // component={Link}
+            component={Link}
             to="/"
             sx={{
               mr: 2,
@@ -117,7 +117,7 @@ const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page,index) => (
+              {pages.map((page, index) => (
                 <Button
                   key={index}
                   component={Link}
@@ -145,7 +145,7 @@ const Navbar = () => {
               )}
             </IconButton>
           </Box>
-          {/* <Button color="inherit">Login</Button> */}
+          <Button color="inherit">Login</Button>
         </Toolbar>
       </Container>
     </AppBar>

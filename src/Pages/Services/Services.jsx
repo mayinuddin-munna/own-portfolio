@@ -5,7 +5,7 @@ import SyncIcon from "@mui/icons-material/Sync";
 import Grid from "@mui/material/Unstable_Grid2";
 import TimerIcon from "@mui/icons-material/Timer";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Divider, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import DevicesIcon from "@mui/icons-material/Devices";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { experimentalStyled as styled } from "@mui/material/styles";
@@ -182,7 +182,6 @@ function Services() {
             </Grid>
           </Grid>
         </Grid>
-        <Divider sx={{ my: { xs: 2, sm: 8 }, mx: 12 }} />
       </Box>
     </Container>
   );
