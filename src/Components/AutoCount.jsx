@@ -22,7 +22,7 @@ const AutoCount = ({ endValue }) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const animation = animate(count, endValue, { duration: 5 });
-          animation.start();
+          // animation.start();
         }
       });
     };

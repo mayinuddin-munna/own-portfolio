@@ -1,22 +1,21 @@
+import './Contact.css'
 import Fade from "react-reveal/Fade";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
+import SendIcon from "@mui/icons-material/Send";
 import { FormHelperText } from "@mui/material";
 import React, { useRef, useState } from "react";
-import PlaceIcon from "@mui/icons-material/Place";
-import PhoneIcon from "@mui/icons-material/Phone";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Input, Typography } from "@material-ui/core";
-import sendMail from "../../../src/assets/images/sentMailIcon.svg";
-import MarkEmailUnreadIcon from "@mui/icons-material/MarkEmailUnread";
 import { TextField, Button, FormControl, InputLabel } from "@material-ui/core";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 const useStyles = makeStyles((theme) => ({
   contact: {
-    margin: "11rem 0",
+    margin: "7rem 0",
   },
   bannerContainer: {
-    margin: "",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -79,97 +78,33 @@ const Contact = () => {
   const [darkModeActive, setDarkModeActive] = useState(false);
 
   return (
-    <Fade bottom cascade>
+    <Fade left cascade>
       <div className={classes.contact}>
         <Container maxWidth="lg" className={classes.bannerContainer}>
-          <Fade left cascade>
-            <div className={classes.textContainer}>
-              <Typography
-                variant="h4"
-                style={{
-                  fontWeight: "bolder",
-                  marginBottom: "2rem",
-                  borderBottom: "3px solid red",
-                  textAlign: "center",
-                }}
-              >
-                Contact information
-              </Typography>
-              <Typography
-                variant="h5"
-                mt={2}
-                style={{
-                  display: "flex",
-                  marginTop: "1rem",
-                  alignItems: "center",
-                  fontWeight: "bold",
-                  fontSize: "2rem",
-                  letterSpacing: "5px",
-                }}
-              >
-                Mayinuddin Munna
-              </Typography>
-              <Typography
-                variant="body1"
-                mt={2}
-                style={{
-                  display: "flex",
-                  fontSize: "1.5rem",
-                  alignItems: "center",
-                  marginTop: ".3rem",
-                }}
-              >
-                Frontend Web Developer.
-              </Typography>
-              <Typography
-                variant="body1"
-                component="h1"
-                gutterBottom
-                style={{
-                  display: "flex",
-                  margin: "1rem 0",
-                  alignItems: "center",
-                }}
-              >
-                <PhoneIcon sx={{ marginRight: 1 }} /> Phone: +880 1572394249
-              </Typography>
-              <Typography
-                variant="body1"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <MarkEmailUnreadIcon sx={{ marginRight: 1 }} />
-                Email: mayinuddin.munna@gmail.com
-              </Typography>
-              <Typography
-                variant="body1"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  margin: "1rem 0",
-                }}
-              >
-                <PlaceIcon sx={{ marginRight: 1 }} /> Address: Baitul Aman
-                Housing, Adabor Dhaka - 1207
-              </Typography>
-              <img
-                src={sendMail}
-                alt="Portfolio image"
-                className={classes.image}
-              />
-            </div>
-          </Fade>
-          <Fade right cascade>
           <div>
-            <Typography variant="h4" style={{ fontWeight: "bolder" }}>
-              Send me a message.
-            </Typography>
+            <Box sx={{ width: "100%" }} className="headlineContact" >
+              <Grid container>
+                <Grid
+                  item
+                  xs={6}
+                  style={{
+                    textAlign: "right",
+                    borderRight: "7px solid red",
+                    padding: ".5rem",
+                  }}
+                >
+                  YOUR IMAGINATION <br /> MY BLUEPRINT
+                </Grid>
+                <Grid item xs={6} style={{ padding: ".5rem" }}>
+                  LET'S BUILD <br />
+                  TOGETHER!
+                </Grid>
+              </Grid>
+            </Box>
             <form
               ref={form}
               onSubmit={handleSubmit(onSubmit)}
-              className={darkModeActive ? "dark-mode" : "light-mode"}
+              // className={darkModeActive ? "dark-mode" : "light-mode"}
             >
               <div>
                 <TextField
@@ -178,12 +113,15 @@ const Contact = () => {
                   fullWidth
                   name="user_name"
                   margin="normal"
-                  {...register("user_name", { required: true, maxLength: 80 })}
+                  {...register("user_name", {
+                    required: true,
+                    maxLength: 80,
+                  })}
                   error={errors.user_name ? true : false}
                   helperText={errors.user_name && "Full name is required"}
                   InputProps={{
                     style: {
-                      color: darkModeActive ? "#ffffff" : "#000000",
+                      color: darkModeActive ? "#ffffff" : "#ffffff",
                       backgroundColor: darkModeActive ? "#333333" : "#ffffff",
                     },
                   }}
@@ -211,8 +149,6 @@ const Contact = () => {
                     },
                   }}
                 />
-              </div>
-              <div>
                 <TextField
                   label="Subject"
                   variant="outlined"
@@ -261,7 +197,7 @@ const Contact = () => {
                 style={{
                   backgroundColor: "white",
                   borderRadius: "5px",
-                  padding: "15px",
+                  padding: "1rem 1rem 0 .6rem",
                 }}
               >
                 <InputLabel
@@ -286,14 +222,18 @@ const Contact = () => {
                 )}
               </FormControl>
               <div>
-                <Button type="submit" variant="contained">
-                  Submit
+                <Button
+                  type="submit"
+                  variant="contained"
+                  size="large"
+                  endIcon={<SendIcon />}
+                >
+                  Send
                 </Button>
                 {message && <p>Thanks, I'll reply ASAP :)</p>}
               </div>
             </form>
           </div>
-          </Fade>
         </Container>
       </div>
     </Fade>

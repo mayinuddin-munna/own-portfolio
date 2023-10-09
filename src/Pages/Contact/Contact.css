@@ -1,0 +1,21 @@
+.headlineContact {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .headlineContact {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .headlineContact {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .headlineContact {
+    font-size: 12px;
+  }
+}

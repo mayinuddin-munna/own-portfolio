@@ -51,7 +51,7 @@ const Footer = () => {
 
   return (
     <Container>
-      <Divider sx={{ my: { xs: 2, sm: 8 }, mx: 12 }} />
+      <Divider sx={{ my: { xs: 2, sm: 8 }, mx: 6 }} />
       <div
         maxWidth="lg"
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
@@ -61,7 +61,7 @@ const Footer = () => {
             to="/about"
             style={{ textDecoration: "none", color: "inherit" }}
           >
-            About Us
+            About Me
           </RouterLink>
         </Typography>
         <Typography variant="body1" sx={{ margin: "10px" }}>
@@ -74,10 +74,10 @@ const Footer = () => {
         </Typography>
         <Typography variant="body1" sx={{ margin: "10px" }}>
           <RouterLink
-            to="/blog"
+            to="/portfolio"
             style={{ textDecoration: "none", color: "inherit" }}
           >
-            Blog
+            Portfolio
           </RouterLink>
         </Typography>
         <Typography variant="body1" sx={{ margin: "10px" }}>
