@@ -1,15 +1,15 @@
-import './Contact.css'
+import "./Contact.css";
+import Box from "@mui/material/Box";
 import Fade from "react-reveal/Fade";
+import Grid from "@mui/material/Grid";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
-import SendIcon from "@mui/icons-material/Send";
 import { FormHelperText } from "@mui/material";
 import React, { useRef, useState } from "react";
+import SendIcon from "@mui/icons-material/Send";
+import { Container, Input } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Input, Typography } from "@material-ui/core";
 import { TextField, Button, FormControl, InputLabel } from "@material-ui/core";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 
 const useStyles = makeStyles((theme) => ({
   contact: {
@@ -75,21 +75,19 @@ const Contact = () => {
       });
   };
 
-  const [darkModeActive, setDarkModeActive] = useState(false);
-
   return (
-    <Fade left cascade>
-      <div className={classes.contact}>
-        <Container maxWidth="lg" className={classes.bannerContainer}>
-          <div>
-            <Box sx={{ width: "100%" }} className="headlineContact" >
+    <div className={classes.contact}>
+      <Container maxWidth="lg" className={classes.bannerContainer}>
+        <div>
+          <Fade>
+            <Box sx={{ width: "100%" }} className="headlineContact">
               <Grid container>
                 <Grid
                   item
                   xs={6}
                   style={{
                     textAlign: "right",
-                    borderRight: "7px solid red",
+                    borderRight: "7px solid #1976d2",
                     padding: ".5rem",
                   }}
                 >
@@ -101,142 +99,133 @@ const Contact = () => {
                 </Grid>
               </Grid>
             </Box>
-            <form
-              ref={form}
-              onSubmit={handleSubmit(onSubmit)}
-              // className={darkModeActive ? "dark-mode" : "light-mode"}
-            >
-              <div>
-                <TextField
-                  label="Full Name"
-                  variant="outlined"
-                  fullWidth
-                  name="user_name"
-                  margin="normal"
-                  {...register("user_name", {
-                    required: true,
-                    maxLength: 80,
-                  })}
-                  error={errors.user_name ? true : false}
-                  helperText={errors.user_name && "Full name is required"}
-                  InputProps={{
-                    style: {
-                      color: darkModeActive ? "#ffffff" : "#ffffff",
-                      backgroundColor: darkModeActive ? "#333333" : "#ffffff",
-                    },
-                  }}
-                />
-                <TextField
-                  label="Email"
-                  variant="outlined"
-                  margin="normal"
-                  fullWidth
-                  style={{ color: "inherit" }}
-                  name="user_email"
-                  {...register("user_email", {
-                    required: true,
-                    minLength: 5,
-                    pattern: /^\S+@\S+$/i,
-                  })}
-                  error={errors.user_email ? true : false}
-                  helperText={
-                    errors.user_email && "Please enter a valid email address"
-                  }
-                  InputProps={{
-                    style: {
-                      color: darkModeActive ? "#ffffff" : "#000000",
-                      backgroundColor: darkModeActive ? "#333333" : "#ffffff",
-                    },
-                  }}
-                />
-                <TextField
-                  label="Subject"
-                  variant="outlined"
-                  fullWidth
-                  name="user_subject"
-                  margin="normal"
-                  {...register("user_subject", {
-                    required: true,
-                    maxLength: 100,
-                  })}
-                  error={errors.user_subject ? true : false}
-                  helperText={errors.user_subject && "Subject is required"}
-                  InputProps={{
-                    style: {
-                      color: darkModeActive ? "#ffffff" : "#000000",
-                      backgroundColor: darkModeActive ? "#333333" : "#ffffff",
-                    },
-                  }}
-                />
-                <TextField
-                  label="Mobile number"
-                  variant="outlined"
-                  margin="normal"
-                  fullWidth
-                  name="user_phone"
-                  type="number"
-                  {...register("user_phone", {
-                    required: true,
-                    minLength: 11,
-                    maxLength: 14,
-                  })}
-                  error={errors.user_phone ? true : false}
-                  helperText={errors.user_phone && "Mobile number is required"}
-                  InputProps={{
-                    style: {
-                      color: darkModeActive ? "#ffffff" : "#000000",
-                      backgroundColor: darkModeActive ? "#333333" : "#ffffff",
-                    },
-                  }}
-                />
-              </div>
-              <FormControl
+          </Fade>
+          <form ref={form} onSubmit={handleSubmit(onSubmit)}>
+            <div>
+              <TextField
+                label="Full Name"
+                variant="outlined"
                 fullWidth
-                sx={{ m: 1 }}
+                name="user_name"
                 margin="normal"
-                style={{
-                  backgroundColor: "white",
-                  borderRadius: "5px",
-                  padding: "1rem 1rem 0 .6rem",
+                {...register("user_name", {
+                  required: true,
+                  maxLength: 80,
+                })}
+                error={errors.user_name ? true : false}
+                helperText={errors.user_name && "Full name is required"}
+                InputProps={{
+                  style: {
+                    backgroundColor: "#ffffff",
+                  },
                 }}
+              />
+              <TextField
+                label="Email"
+                variant="outlined"
+                margin="normal"
+                fullWidth
+                style={{ color: "inherit" }}
+                name="user_email"
+                {...register("user_email", {
+                  required: true,
+                  minLength: 5,
+                  pattern: /^\S+@\S+$/i,
+                })}
+                error={errors.user_email ? true : false}
+                helperText={
+                  errors.user_email && "Please enter a valid email address"
+                }
+                InputProps={{
+                  style: {
+                    backgroundColor: "#ffffff",
+                  },
+                }}
+              />
+              <TextField
+                label="Subject"
+                variant="outlined"
+                fullWidth
+                name="user_subject"
+                margin="normal"
+                {...register("user_subject", {
+                  required: true,
+                  maxLength: 100,
+                })}
+                error={errors.user_subject ? true : false}
+                helperText={errors.user_subject && "Subject is required"}
+                InputProps={{
+                  style: {
+                    backgroundColor: "#ffffff",
+                  },
+                }}
+              />
+              <TextField
+                label="Mobile number"
+                variant="outlined"
+                margin="normal"
+                fullWidth
+                name="user_phone"
+                type="number"
+                {...register("user_phone", {
+                  required: true,
+                  minLength: 11,
+                  maxLength: 14,
+                })}
+                error={errors.user_phone ? true : false}
+                helperText={errors.user_phone && "Mobile number is required"}
+                InputProps={{
+                  style: {
+                    backgroundColor: "#ffffff",
+                  },
+                }}
+              />
+            </div>
+            <FormControl
+              fullWidth
+              sx={{ m: 1 }}
+              margin="normal"
+              style={{
+                backgroundColor: "white",
+                borderRadius: "5px",
+                padding: "1rem 1rem .5rem .6rem",
+              }}
+            >
+              <InputLabel
+                htmlFor="standard-adornment-amount"
+                style={{ padding: "15px" }}
               >
-                <InputLabel
-                  htmlFor="standard-adornment-amount"
-                  style={{ padding: "15px" }}
-                >
-                  Message...
-                </InputLabel>
-                <Input
-                  id="standard-adornment-amount"
-                  {...register("message", { required: true })}
-                  error={errors.message ? true : false}
-                  InputProps={{
-                    style: {
-                      color: darkModeActive ? "#ffffff" : "#000000",
-                      backgroundColor: darkModeActive ? "#333333" : "#ffffff",
-                    },
-                  }}
-                />
-                {errors.message && (
-                  <FormHelperText error>Please enter a message</FormHelperText>
-                )}
-              </FormControl>
-              <div>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  size="large"
-                  endIcon={<SendIcon />}
-                >
-                  Send
-                </Button>
-                {message && <p>Thanks, I'll reply ASAP :)</p>}
-              </div>
-            </form>
-          </div>
-        </Container>
-      </div>
-    </Fade>
+                Message...
+              </InputLabel>
+              <Input
+                id="standard-adornment-amount"
+                {...register("message", { required: true })}
+                error={errors.message ? true : false}
+                InputProps={{
+                  style: {
+                    backgroundColor: "#ffffff",
+                  },
+                }}
+              />
+              {errors.message && (
+                <FormHelperText error>Please enter a message</FormHelperText>
+              )}
+            </FormControl>
+            <div>
+              <Button
+                type="submit"
+                variant="contained"
+                size="large"
+                endIcon={<SendIcon />}
+              >
+                Send
+              </Button>
+              {message && <p>Thanks, I'll reply ASAP :)</p>}
+            </div>
+          </form>
+        </div>
+      </Container>
+    </div>
   );
 };
 
