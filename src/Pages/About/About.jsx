@@ -1,15 +1,15 @@
+import "./About.css";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import Zoom from "react-reveal/Zoom";
 import Slide from "react-reveal/Slide";
+import React from "react";
 import { Link } from "react-router-dom";
-import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 import { Button, Container, Typography } from "@material-ui/core";
-import { useDencrypt } from "use-dencrypt-effect";
 
 import react from "../../assets/images/react.png";
 import node from "../../assets/images/node-js.png";
@@ -18,7 +18,7 @@ import jwt from "../../../src/assets/images/jwt.png";
 import git from "../../../src/assets/images/git.png";
 import mongodb from "../../assets/images/mongodb.png";
 import css from "../../../src/assets/images/css3.png";
-import figma from "../../assets/images/figma--v1.png";
+import figma from "../../assets/images/figma.png";
 import html from "../../../src/assets/images/html5.png";
 import redux from "../../../src/assets/images/redux.png";
 import next from "../../../src/assets/images/next-js.png";
@@ -29,12 +29,12 @@ import express from "../../../src/assets/images/express-js.png";
 import javascript from "../../../src/assets/images/javascript.png";
 import typeScript from "../../../src/assets/images/typescript.png";
 import SectionTitle from "../../Components/SectionTitle";
-import HeroText from "../../Components/HeroText";
 
 const useStyles = makeStyles((theme) => ({
   about: {
-    margin: "7rem 0",
+    margin: "5rem 0",
   },
+
   bannerContainer: {
     margin: "",
     display: "flex",
@@ -46,24 +46,27 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
     },
   },
+
   textContainer: {
     flex: 1,
     [theme.breakpoints.down("sm")]: {
       marginBottom: theme.spacing(2),
     },
   },
+
   imageContainer: {
     flex: 1,
     display: "flex",
     alignItems: "center",
-    borderRadius: "50%",
     justifyContent: "center",
   },
+
   image: {
     maxWidth: "80%",
     height: "auto",
     borderRadius: theme.spacing(50),
   },
+
   technology: {
     textAlign: "center",
     marginTop: "5rem",
@@ -72,17 +75,6 @@ const useStyles = makeStyles((theme) => ({
 
 const About = () => {
   const classes = useStyles();
-  const [result, setResult] = useDencrypt("About Me");
-
-  useEffect(() => {
-    const loop = async () => {
-      for (let i = 0; i < 1; i++) {
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        await setResult(result);
-      }
-    };
-    loop();
-  }, []);
 
   const skills = [
     {
@@ -106,127 +98,118 @@ const About = () => {
       image: redux,
     },
     {
-      id: 5,
+      id: 6,
       image: typeScript,
     },
     {
-      id: 6,
+      id: 7,
       image: next,
     },
     {
-      id: 7,
+      id: 8,
       image: tailwind,
     },
     {
-      id: 8,
+      id: 9,
       image: mui,
     },
     {
-      id: 9,
+      id: 10,
       image: node,
     },
     {
-      id: 10,
+      id: 11,
       image: mongodb,
     },
     {
-      id: 11,
+      id: 12,
       image: express,
     },
     {
-      id: 12,
+      id: 13,
       image: firebase,
     },
     {
-      id: 13,
+      id: 14,
       image: git,
     },
     {
-      id: 14,
+      id: 15,
       image: jwt,
     },
     {
-      id: 15,
+      id: 16,
       image: figma,
     },
   ];
 
   return (
-    <div className={`${classes.about}`}>
-      <Container maxWidth="lg" className={classes.bannerContainer}>
-        <div className={classes.textContainer}>
-          <Typography
-            variant="h3"
-            style={{ fontWeight: "bold", margin: "1rem 0" }}
+    <Container>
+      <div className={`${classes.about}`}>
+        <div className={classes.bannerContainer}>
+          <div className={classes.textContainer}>
+            <SectionTitle
+              title="About Me"
+              subtitle="Native Design & Web developer."
+            />
+            <Slide bottom cascade>
+              <Typography variant="body1">
+                I am an enthusiastic and creative front-end developer currently
+                in the final year of my graduate program, and I am eager to
+                kickstart a rewarding career in this field. With a strong
+                passion for creating visually appealing and user-friendly
+                websites, I am actively seeking new opportunities to apply and
+                enhance my skills as a front-end developer. Currently, I am
+                primarily focused on working with the React.js framework, which
+                has allowed me to develop dynamic and interactive user
+                interfaces.
+              </Typography>
+            </Slide>
+            <Link to="/contact">
+              <Button
+                variant="contained"
+                size="large"
+                style={{ marginTop: "10px" }}
+              >
+                Hire me
+              </Button>
+            </Link>
+          </div>
+          <div className={classes.imageContainer}>
+            <Zoom cascade>
+              <img
+                src={banner}
+                alt="Portfolio image"
+                className={classes.image}
+              />
+            </Zoom>
+          </div>
+        </div>
+        <div className={`${classes.technology} skill-bg`}>
+          <SectionTitle
+              title="Technology I'm using"
+              subtitle="Things ths i'm good at."
+            />
+            {/* TODO: to search GPT for responsive skills icons 194 to 209 line */}
+          <Swiper
+            slidesPerView={5}
+            spaceBetween={150}
+            freeMode={true}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay, FreeMode, Pagination]}
           >
-            {/* {result} */}
-            <SectionTitle title="About Me" subtitle="Introduction" />
-            {/* <HeroText /> */}
-          </Typography>
-          <Zoom cascade>
-            <Typography
-              variant="h6"
-              component="h1"
-              gutterBottom
-              style={{ fontWeight: "bold" }}
-            >
-              Native Design & Front-End developer.
-            </Typography>
-          </Zoom>
-          <Slide bottom cascade>
-            <Typography variant="body1">
-              I am an enthusiastic and creative front-end developer currently in
-              the final year of my graduate program, and I am eager to kickstart
-              a rewarding career in this field. With a strong passion for
-              creating visually appealing and user-friendly websites, I am
-              actively seeking new opportunities to apply and enhance my skills
-              as a front-end developer. Currently, I am primarily focused on
-              working with the React.js framework, which has allowed me to
-              develop dynamic and interactive user interfaces.
-            </Typography>
-          </Slide>
-          <Link to="/contact">
-            <Button
-              variant="contained"
-              size="large"
-              style={{ marginTop: "10px" }}
-            >
-              Hire me
-            </Button>
-          </Link>
+            {skills.map((skill) => (
+              <SwiperSlide key={skill.id}>
+                <img src={skill.image} alt="skill image" className="swiper" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-        <div className={classes.imageContainer}>
-          {/* <ImageSlider images={memoji.images} /> */}
-          <Zoom cascade>
-            <img src={banner} alt="Portfolio image" className={classes.image} />
-          </Zoom>
-        </div>
-      </Container>
-      <Container className={`${classes.technology} skill-bg`}>
-        <Container style={{ margin: "2rem 0" }}>
-          <Typography variant="h3" style={{ fontWeight: "bold" }}>
-            Technology I'm using.
-          </Typography>
-          <Typography variant="h6">Things ths i'm good at.</Typography>
-        </Container>
-        <Swiper
-          slidesPerView={5}
-          spaceBetween={150}
-          freeMode={true}
-          autoplay={{
-            delay: 3500,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay, FreeMode, Pagination]}
-        >
-          {skills.map((skill) => (
-            <SwiperSlide key={skill.id}>
-              <img src={skill.image} alt={skill.image} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 };
 

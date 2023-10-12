@@ -1,17 +1,12 @@
+import "./Portfolio.css";
 import React from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
 import Paper from "@mui/material/Paper";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardHeader from "@mui/material/CardHeader";
-import Grid from "@mui/material/Grid";
-import StarIcon from "@mui/icons-material/StarBorder";
-import GlobalStyles from "@mui/material/GlobalStyles";
-import Container from "@mui/material/Container";
+import Grid from "@mui/material/Unstable_Grid2";
+import { Button, Container, Typography } from "@mui/material";
 import { experimentalStyled as styled } from "@mui/material/styles";
+import { Link } from "react-router-dom";
+import SectionTitle from "../../Components/SectionTitle";
 
 const projects = [
   {
@@ -56,87 +51,98 @@ const projects = [
     descriptions:
       "Top Chefs Network: Connect with renowned chefs, explore their profiles, and enhance your cooking experience, our collection of recipes is designed to satisfy the most discerning palate.",
   },
+  {
+    id: 5,
+    title: "Master Chef",
+    url: "../../../src/assets/images/masterChef.png",
+    live: "https://master-chef-30094.web.app/",
+    client: "https://github.com/munnahosssain/Master-chef-client",
+    server: "https://github.com/munnahosssain/Master-Chef-server",
+    descriptions:
+      "Top Chefs Network: Connect with renowned chefs, explore their profiles, and enhance your cooking experience, our collection of recipes is designed to satisfy the most discerning palate.",
+  },
+  {
+    id: 6,
+    title: "Master Chef",
+    url: "../../../src/assets/images/masterChef.png",
+    live: "https://master-chef-30094.web.app/",
+    client: "https://github.com/munnahosssain/Master-chef-client",
+    server: "https://github.com/munnahosssain/Master-Chef-server",
+    descriptions:
+      "Top Chefs Network: Connect with renowned chefs, explore their profiles, and enhance your cooking experience, our collection of recipes is designed to satisfy the most discerning palate.",
+  },
 ];
 
-const defaultTheme = createTheme();
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(2),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
 function Portfolio() {
   return (
-    <ThemeProvider theme={defaultTheme} py={12}>
-      <GlobalStyles
-        styles={{ ul: { margin: 0, padding: 0, listStyle: "none" } }}
-      />
-      <Container maxWidth="md" component="main">
-        <Grid container spacing={2} alignItems="flex-end">
-          {projects.map((tier) => (
-            <Grid
-              item
-              key={tier.title}
-              xs={12}
-              sm={tier.title === "Enterprise" ? 12 : 6}
-              md={6}
-            >
-              <Card>
-                <CardHeader
-                  title={tier.title}
-                  subheader={tier.subheader}
-                  titleTypographyProps={{ align: "center" }}
-                  action={tier.title === "Pro" ? <StarIcon /> : null}
-                  subheaderTypographyProps={{
-                    align: "center",
-                  }}
-                  sx={{
-                    backgroundColor: (theme) =>
-                      theme.palette.mode === "light"
-                        ? theme.palette.grey[200]
-                        : theme.palette.grey[700],
-                  }}
-                />
-                <CardContent>
-                  <Box
+    <Container>
+      <Box component="section" pt={6}>
+        <div style={{ textAlign: "center" }}>
+          <SectionTitle title="Projects" subtitle="What i have done so far" />
+        </div>
+        <Box sx={{ flexGrow: 1, margin: "3rem 0" }}>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 2.5 }}
+            columns={{ xs: 2, sm: 4, md: 12 }}
+          >
+            {projects.slice(0, 6).map((project) => (
+              <Grid xs={2} sm={4} md={4} key={project.id}>
+                <Item style={{ borderRadius: ".5rem" }}>
+                  <Typography
                     sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "baseline",
-                      // mb: 2,
+                      margin: "-2rem",
                     }}
                   >
-                    {/* <Typography
-                      component="h2"
-                      variant="h3"
-                      color="text.primary"
-                    >
-                      ${tier.price}
-                    </Typography>
-                    <Typography variant="h6" color="text.secondary">
-                      /mo
-                    </Typography> */}
-                  </Box>
-                  <img src={tier.url} alt="" loading="lazy" style={{width:"100%"}}/>
-                  {/* <ul>
-                    {tier.description.map((line) => (
-                      <Typography
-                        component="li"
-                        variant="subtitle1"
-                        align="center"
-                        key={line}
-                      >
-                        {line}
-                      </Typography>
-                    ))}
-                  </ul> */}
-                </CardContent>
-                <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant}>
-                    {tier.buttonText}
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </ThemeProvider>
+                    <img
+                      src={project.url}
+                      alt=""
+                      style={{
+                        width: "100%",
+                        borderRadius: "1.5rem",
+                        padding: "1rem 1rem 2.5rem 1rem",
+                      }}
+                    />
+                  </Typography>
+                  <Typography
+                    className="bounce"
+                    variant="h5"
+                    sx={{ fontWeight: "700" }}
+                  >
+                    {project.title}
+                  </Typography>
+                </Item>
+              </Grid>
+            ))}
+          </Grid>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "3rem 0",
+            }}
+          >
+            <Link to="/allProjects">
+              <Button
+                variant="outlined"
+                size="large"
+                style={{ fontWeight: "bolder" }}
+              >
+                View More
+              </Button>
+            </Link>
+          </div>
+        </Box>
+      </Box>
+    </Container>
   );
 }
 

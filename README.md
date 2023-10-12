@@ -1,7 +1,7 @@
 # `own portfolio`
 
 Open the app in the preview mode.\
-Open [mayinuddin-munna.web.app](https://mayinuddin-munna.web.app) to view it in your browser.
+Open [mayinuddin-munna.web.app](https://mayinuddin-munna.web.app/home) to view it in your browser.
 
 ## Project Purpose
 

@@ -13,7 +13,7 @@ import { TextField, Button, FormControl, InputLabel } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   contact: {
-    margin: "7rem 0",
+    margin: "5rem 0",
   },
   bannerContainer: {
     display: "flex",
@@ -94,8 +94,8 @@ const Contact = () => {
                   YOUR IMAGINATION <br /> MY BLUEPRINT
                 </Grid>
                 <Grid item xs={6} style={{ padding: ".5rem" }}>
-                  LET'S BUILD <br />
-                  TOGETHER!
+                  LET'S BUILD<br />
+                  WORK TOGETHER!
                 </Grid>
               </Grid>
             </Box>

@@ -10,8 +10,8 @@ import DevicesIcon from "@mui/icons-material/Devices";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import AutoCount from "../../Components/AutoCount";
-import { Card } from "@mui/material";
 import TouchAppIcon from "@mui/icons-material/TouchApp";
+import SectionTitle from "../../Components/SectionTitle";
 
 const useStyles = makeStyles((theme) => ({
   sideBanner: {
@@ -91,18 +91,12 @@ function Services() {
   return (
     <Container>
       <Box component="section" py={12}>
-        <Typography
-          variant="h3"
-          style={{
-            fontWeight: "bold",
-            textAlign: "center",
-          }}
-        >
-          What I'm Doing
-        </Typography>
-        <Typography variant="body1" style={{ textAlign: "center" }}>
-          I love what i do. I take great pride in what i do.
-        </Typography>
+        <div style={{ textAlign: "center" }}>
+          <SectionTitle
+            title=" What I'm Doing"
+            subtitle="I love what i do. I take great pride in what i do."
+          />
+        </div>
         <Box sx={{ flexGrow: 1, margin: "3rem 0" }}>
           <Grid
             container

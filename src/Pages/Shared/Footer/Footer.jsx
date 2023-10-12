@@ -1,4 +1,6 @@
 import { Link as RouterLink } from "react-router-dom";
+import Lottie from "lottie-react";
+import banner from "../../../../public/boilAnimation.json";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -53,7 +55,6 @@ const Footer = () => {
     <Container>
       <Divider sx={{ my: { xs: 2, sm: 8 }, mx: 6 }} />
       <div
-        maxWidth="lg"
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
         <Typography variant="body1" sx={{ margin: "10px" }}>
@@ -89,8 +90,12 @@ const Footer = () => {
           </RouterLink>
         </Typography>
       </div>
+      {/* <Lottie
+          style={{ height: "29.5rem" }}
+          animationData={banner}
+          loop={true}
+        /> */}
       <div
-        maxWidth="lg"
         style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
       >
         {icons.map((icon) => (

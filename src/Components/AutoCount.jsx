@@ -1,11 +1,18 @@
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import {
+  m,
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+  LazyMotion,
+  domAnimation,
+} from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const AutoCount = ({ endValue }) => {
   const ref = useRef(null);
   const count = useMotionValue(0);
   const rounded = useTransform(count, Math.round);
-
 
   useEffect(() => {
     const element = ref.current;
@@ -35,7 +42,13 @@ const AutoCount = ({ endValue }) => {
     };
   }, [count, endValue]);
 
-  return <motion.h1 ref={ref}>{rounded}</motion.h1>;
+  return (
+    // <LazyMotion features={domAnimation} strict>
+    //   <m.div>
+        <motion.h1 ref={ref}>{rounded}</motion.h1>
+    //   </m.div>
+    // </LazyMotion>
+  );
 };
 
 export default AutoCount;
