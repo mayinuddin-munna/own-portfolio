@@ -1,4 +1,4 @@
-# `own portfolio`
+# `Mayinuddin munna's portfolio`
 
 Open the app in the preview mode.\
 Open [mayinuddin-munna.web.app](https://mayinuddin-munna.web.app/home) to view it in your browser.
@@ -6,7 +6,7 @@ Open [mayinuddin-munna.web.app](https://mayinuddin-munna.web.app/home) to view i
 ## Project Purpose
 
 This project is made to about me my working skills to show my client and others.
-The basic structure of a website in html, css and MaterialUI. It  my portfolio project. Since this project is a described about me.
+The basic structure of a website in html, css and MaterialUI. It my portfolio project. Since this project is a described about me.
 
 This allowed me to see where my strengths where and which sections i needed to work on.
 
@@ -31,7 +31,7 @@ The home page contains the basic details of the portfolio. These include:
 - About
 - Service Mission
 - Service vision
-- Blog section
+- Project section
 - Footer
 
 ### The contact us page comprises of a form that allows users to insert their details and submit for them to be contacted.
