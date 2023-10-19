@@ -103,9 +103,9 @@ const Contact = () => {
           <form ref={form} onSubmit={handleSubmit(onSubmit)}>
             <div>
               <TextField
-                label="Full Name"
-                variant="outlined"
                 fullWidth
+                label="Full Name"
+                variant="filled"
                 name="user_name"
                 margin="normal"
                 {...register("user_name", {
@@ -121,10 +121,10 @@ const Contact = () => {
                 }}
               />
               <TextField
-                label="Email"
-                variant="outlined"
-                margin="normal"
                 fullWidth
+                label="Email"
+                variant="filled"
+                margin="normal"
                 style={{ color: "inherit" }}
                 name="user_email"
                 {...register("user_email", {
@@ -143,9 +143,9 @@ const Contact = () => {
                 }}
               />
               <TextField
-                label="Subject"
-                variant="outlined"
                 fullWidth
+                label="Subject"
+                variant="filled"
                 name="user_subject"
                 margin="normal"
                 {...register("user_subject", {
@@ -161,10 +161,10 @@ const Contact = () => {
                 }}
               />
               <TextField
-                label="Mobile number"
-                variant="outlined"
-                margin="normal"
                 fullWidth
+                label="Mobile number"
+                variant="filled"
+                margin="normal"
                 name="user_phone"
                 type="number"
                 {...register("user_phone", {

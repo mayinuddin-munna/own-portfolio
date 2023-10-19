@@ -6,8 +6,8 @@ const Blog = () => {
     return (
         <Container component="section" py={4}>
             <SectionTitle
-            title="মাতৃভাষায় প্রোগ্রামিং ব্লগ"
-            subtitle="বাংলায় ব্লগ পরতে নিয়মিত চোখ রাখুন।"
+            title="প্রোগ্রামিং শিখুন মাতৃভাষা বাংলায়।"
+            subtitle="আসুন প্রোগ্রামিং এর জগতে যাত্রা শুরু করি।"
           />
         </Container>
     );

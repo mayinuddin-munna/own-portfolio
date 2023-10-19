@@ -73,6 +73,13 @@ const Banner = () => {
     loop();
   }, []);
 
+  const scrollToTop = () => {
+    scroll.scrollToTop({
+      duration: 10000,
+      smooth: "easeInOutQuint",
+    });
+  };
+
   return (
     <div className={classes.banner}>
       <Container maxWidth="lg" className={classes.bannerContainer}>
@@ -124,7 +131,7 @@ const Banner = () => {
         />
       </div>
       <img src={canvas} alt="canvas" className={classes.image} />
-      <ScrollToTop showUnder={960}>
+      <ScrollToTop  onClick={scrollToTop} showUnder={960}>
         <KeyboardDoubleArrowUpIcon
           sx={{ fontSize: "2rem" }}
           className={classes.arrow}

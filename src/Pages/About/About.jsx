@@ -10,24 +10,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 import { Button, Container, Typography } from "@material-ui/core";
-
-import react from "../../assets/images/react.png";
-import node from "../../assets/images/node-js.png";
-import mui from "../../../src/assets/images/mui.png";
-import jwt from "../../../src/assets/images/jwt.png";
-import git from "../../../src/assets/images/git.png";
-import mongodb from "../../assets/images/mongodb.png";
-import css from "../../../src/assets/images/css3.png";
-import figma from "../../assets/images/figma.png";
-import html from "../../../src/assets/images/html5.png";
-import redux from "../../../src/assets/images/redux.png";
-import next from "../../../src/assets/images/next-js.png";
 import banner from "../../../src/assets/images/formal.png";
-import firebase from "../../../src/assets/images/firebase.png";
-import tailwind from "../../../src/assets/images/tailwind.png";
-import express from "../../../src/assets/images/express-js.png";
-import javascript from "../../../src/assets/images/javascript.png";
-import typeScript from "../../../src/assets/images/typescript.png";
+
+import react from "../../assets/tech/react.png";
+import node from "../../assets/tech/node-js.png";
+import mui from "../../../src/assets/tech/mui.png";
+import jwt from "../../../src/assets/tech/jwt.png";
+import git from "../../../src/assets/tech/git.png";
+import mongodb from "../../assets/tech/mongodb.png";
+import css from "../../../src/assets/tech/css.png";
+import figma from "../../assets/tech/figma.png";
+import html from "../../../src/assets/tech/html.png";
+import redux from "../../../src/assets/tech/redux.png";
+import next from "../../../src/assets/tech/next-js.png";
+import firebase from "../../../src/assets/tech/firebase.png";
+import tailwind from "../../../src/assets/tech/tailwind.png";
+import express from "../../../src/assets/tech/express-js.png";
+import javascript from "../../../src/assets/tech/javascript.png";
+import typeScript from "../../../src/assets/tech/typescript.png";
 import SectionTitle from "../../Components/SectionTitle";
 
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   bannerContainer: {
-    margin: "",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -187,10 +186,10 @@ const About = () => {
         </div>
         <div className={`${classes.technology} skill-bg`}>
           <SectionTitle
-              title="Technology I'm using"
-              subtitle="Things ths i'm good at."
-            />
-            {/* TODO: to search GPT for responsive skills icons 194 to 209 line */}
+            title="Technology I'm using"
+            subtitle="Things ths i'm good at."
+          />
+          {/* TODO: to search GPT for responsive skills icons 194 to 209 line */}
           <Swiper
             slidesPerView={5}
             spaceBetween={150}

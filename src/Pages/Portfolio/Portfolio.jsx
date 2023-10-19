@@ -7,12 +7,18 @@ import { Button, Container, Typography } from "@mui/material";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import SectionTitle from "../../Components/SectionTitle";
+import GalaxyMeeting from "../../../src/assets/images/galaxyMeeting.png";
+import AlphaPhotography from "../../../src/assets/images/alpha.png"
+import KidsDay from "../../../src/assets/images/kidsDay.png"
+import MasterChef from "../../../src/assets/images/masterChef.png"
+import GeometryGenius from "../../../src/assets/images/Geometry Genius.png"
+import ResultProcessing from "../../../src/assets/images/school-result.png"
 
 const projects = [
   {
     id: 1,
     title: "Galaxy Meeting",
-    url: "../../../src/assets/images/galaxyMeeting.png",
+    url: GalaxyMeeting,
     live: "https://galaxy-meeting-app.web.app/",
     client:
       "https://github.com/munnahosssain/online-meeting-recording-app-client",
@@ -24,7 +30,7 @@ const projects = [
   {
     id: 2,
     title: "Alpha photography",
-    url: "../../../src/assets/images/alpha.png",
+    url: AlphaPhotography,
     live: "https://alpha-photography-2fcdd.web.app/",
     client: "https://github.com/munnahosssain/Alpha-photography-client",
     server: "https://github.com/munnahosssain/Alpha-photography-server",
@@ -34,7 +40,7 @@ const projects = [
   {
     id: 3,
     title: "Kids Day",
-    url: "../../../src/assets/images/kidsDay.png",
+    url: KidsDay,
     live: "https://kids-day-97c9b.web.app/",
     client: "https://github.com/munnahosssain/kids-Day-client",
     server: "https://github.com/munnahosssain/kids-Day-server",
@@ -44,7 +50,7 @@ const projects = [
   {
     id: 4,
     title: "Master Chef",
-    url: "../../../src/assets/images/masterChef.png",
+    url: MasterChef,
     live: "https://master-chef-30094.web.app/",
     client: "https://github.com/munnahosssain/Master-chef-client",
     server: "https://github.com/munnahosssain/Master-Chef-server",
@@ -53,23 +59,22 @@ const projects = [
   },
   {
     id: 5,
-    title: "Master Chef",
-    url: "../../../src/assets/images/masterChef.png",
-    live: "https://master-chef-30094.web.app/",
-    client: "https://github.com/munnahosssain/Master-chef-client",
-    server: "https://github.com/munnahosssain/Master-Chef-server",
+    title: "Geometry Genius",
+    url: GeometryGenius,
+    live: "https://resplendent-pithivier-612b66.netlify.app/",
+    client: "https://github.com/munnahosssain/Geometry-Genius-vanilla.ja",
     descriptions:
-      "Top Chefs Network: Connect with renowned chefs, explore their profiles, and enhance your cooking experience, our collection of recipes is designed to satisfy the most discerning palate.",
+      "Here kids are calculate the area of triangle, Rectangle, parallelogram, Rhombus, Pentagon, Ellipse.",
   },
   {
     id: 6,
-    title: "Master Chef",
-    url: "../../../src/assets/images/masterChef.png",
-    live: "https://master-chef-30094.web.app/",
-    client: "https://github.com/munnahosssain/Master-chef-client",
-    server: "https://github.com/munnahosssain/Master-Chef-server",
+    title: "Result Processing",
+    url: ResultProcessing,
+    live: "https://school-management-ist.web.app/",
+    client: "https://github.com/munnahosssain/School-management-client",
+    server: "https://github.com/munnahosssain/School-management-server",
     descriptions:
-      "Top Chefs Network: Connect with renowned chefs, explore their profiles, and enhance your cooking experience, our collection of recipes is designed to satisfy the most discerning palate.",
+      "Result processing web app is calculate all subject marks and convert to CGPA. Admin can input student student marks.",
   },
 ];
 
@@ -86,7 +91,7 @@ function Portfolio() {
     <Container>
       <Box component="section" pt={6}>
         <div style={{ textAlign: "center" }}>
-          <SectionTitle title="Projects" subtitle="What i have done so far" />
+          <SectionTitle title="Projects Section" subtitle="What i have done so far" />
         </div>
         <Box sx={{ flexGrow: 1, margin: "3rem 0" }}>
           <Grid
@@ -104,7 +109,7 @@ function Portfolio() {
                   >
                     <img
                       src={project.url}
-                      alt=""
+                      alt="project image"
                       style={{
                         width: "100%",
                         borderRadius: "1.5rem",

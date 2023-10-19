@@ -18,7 +18,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom, #00000080, #00000080),
-    url("../src/assets/images/skillsBg.png");
+    url("../../assets/images/skillsBg.png");
 }
 
 @media screen and (max-width: 1024px) {
