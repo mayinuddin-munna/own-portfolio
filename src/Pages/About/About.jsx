@@ -189,7 +189,6 @@ const About = () => {
             title="Technology I'm using"
             subtitle="Things ths i'm good at."
           />
-          {/* TODO: to search GPT for responsive skills icons 194 to 209 line */}
           <Swiper
             slidesPerView={5}
             spaceBetween={150}
@@ -197,6 +196,28 @@ const About = () => {
             autoplay={{
               delay: 3500,
               disableOnInteraction: false,
+            }}
+            breakpoints={{
+              375: {
+                slidesPerView: 3,
+                spaceBetween: 100,
+              },
+              425: {
+                slidesPerView: 3,
+                spaceBetween: 100,
+              },
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 120,
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 120,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 150,
+              },
             }}
             modules={[Autoplay, FreeMode, Pagination]}
           >

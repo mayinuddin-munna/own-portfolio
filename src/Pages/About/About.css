@@ -5,19 +5,13 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 425px) {
-  .swiper-slide img {
-    width: 15%;
-  }
-}
-
 .skill-bg {
   padding: 1rem;
   background: fixed;
   background-size: 65%;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to bottom, #00000080, #00000080),
+  background-image: linear-gradient(to bottom, #25252580, #25252580),
     url("../../assets/images/skillsBg.png");
 }
 

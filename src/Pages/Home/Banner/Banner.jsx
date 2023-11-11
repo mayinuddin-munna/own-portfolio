@@ -93,7 +93,7 @@ const Banner = () => {
             , i am
           </Typography>
           <h1 className="encrypt">{encrypt}</h1>
-          <h3 className="title">Native Design & Web Developer.</h3>
+          <h3 className="skill-title">Native Design & Web Developer.</h3>
           <div style={{ marginTop: "1.5rem", fontWeight: "bold" }}>
             <a href="/Mayinuddin_Munna-resume-GoogleDocs.pdf" download>
               <Button
