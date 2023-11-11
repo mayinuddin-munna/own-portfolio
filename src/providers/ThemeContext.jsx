@@ -29,6 +29,9 @@ const ThemeContext = ({ children }) => {
       createTheme({
         palette: {
           mode,
+          background: {
+            default: mode === "light" ? "#ffffff" : "#252525",
+          },
         },
       }),
     [mode]
