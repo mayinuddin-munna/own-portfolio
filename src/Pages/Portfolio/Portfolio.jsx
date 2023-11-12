@@ -89,7 +89,7 @@ const Item = styled(Paper)(({ theme }) => ({
 function Portfolio() {
   return (
     <Container>
-      <Box component="section" pt={6}>
+      <Box pt={10}>
         <div style={{ textAlign: "center" }}>
           <SectionTitle title="Projects Section" subtitle="What i have done so far" />
         </div>

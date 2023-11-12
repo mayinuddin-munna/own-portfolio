@@ -65,11 +65,6 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     borderRadius: theme.spacing(50),
   },
-
-  technology: {
-    textAlign: "center",
-    marginTop: "5rem",
-  },
 }));
 
 const About = () => {
@@ -184,7 +179,7 @@ const About = () => {
             </Zoom>
           </div>
         </div>
-        <div className={`${classes.technology} skill-bg`}>
+        <div className={`skill-bg`}>
           <SectionTitle
             title="Technology I'm using"
             subtitle="Things ths i'm good at."

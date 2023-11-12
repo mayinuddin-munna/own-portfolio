@@ -90,7 +90,7 @@ function Services() {
 
   return (
     <Container>
-      <Box component="section" py={12}>
+      <Box component="section">
         <div style={{ textAlign: "center" }}>
           <SectionTitle
             title=" What I'm Doing"

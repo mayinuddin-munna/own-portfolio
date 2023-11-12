@@ -4,9 +4,17 @@
   font-weight: 700;
 }
 
+.skill-title {
+  margin: 10px 0;
+  font-size: 1.5rem;
+}
+
 @media screen and (max-width: 425px) {
   .encrypt {
     font-size: 35px;
+  }
+  .skill-title {
+    font-size: 1rem;
   }
 }
 
@@ -14,21 +22,16 @@
   .encrypt {
     font-size: 30px;
   }
-}
-
-.skill-title {
-  margin: 10px 0;
-  font-size: 1.5rem;
-}
-
-@media screen and (max-width: 425px) {
   .skill-title {
     font-size: 1rem;
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 320px) {
+  .encrypt {
+    font-size: 25px;
+  }
   .skill-title {
-    font-size: 1rem;
+    font-size: .8rem;
   }
 }
