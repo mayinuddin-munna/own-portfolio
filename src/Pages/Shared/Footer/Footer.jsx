@@ -33,7 +33,7 @@ const Footer = () => {
     },
     {
       id: 5,
-      url: "https://twitter.com/mohamad_munna",
+      url: "https://twitter.com/mayinuddinMunna",
       icon: <TwitterIcon />,
       backgroundColor: "#55acee",
     },
@@ -45,7 +45,7 @@ const Footer = () => {
     },
     {
       id: 1,
-      url: "https://instagram.com/mohamad_munna",
+      url: "https://instagram.com",
       icon: <InstagramIcon />,
       backgroundColor: "#ac2bac",
     },
