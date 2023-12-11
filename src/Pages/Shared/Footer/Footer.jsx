@@ -91,7 +91,7 @@ const Footer = () => {
         </Typography>
       </div>
       {/* <Lottie
-          style={{ height: "29.5rem" }}
+          style={{ height: "29.5rem",width:"full" }}
           animationData={banner}
           loop={true}
         /> */}
@@ -119,7 +119,7 @@ const Footer = () => {
         style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
       >
         <Typography variant="body2">
-          &copy; {currentYear} - All rights reserved by Mayinudin Munna
+          &copy; {currentYear} - All rights reserved by Mayinuddin Munna
         </Typography>
       </div>
     </Container>

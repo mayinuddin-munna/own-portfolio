@@ -94,8 +94,8 @@ const Banner = () => {
           </Typography>
           <h1 className="encrypt">{encrypt}</h1>
           <h3 className="skill-title">Native Design & Web Developer.</h3>
-          <div style={{ marginTop: "1.5rem", fontWeight: "bold" }}>
-            <a href="/Mayinuddin_Munna-resume-GoogleDocs.pdf" download>
+          <div style={{ marginTop: "2vh", fontWeight: "bold" }}>
+            <a href="/Mayinuddin_Munna_Full_Stack_Developer.pdf" download>
               <Button
                 sx={{ fontWeight: "bold" }}
                 variant="contained"
@@ -131,7 +131,7 @@ const Banner = () => {
         />
       </div>
       <img src={canvas} alt="canvas" className={classes.image} />
-      <ScrollToTop  onClick={scrollToTop} showUnder={960}>
+      <ScrollToTop onClick={scrollToTop} showUnder={960}>
         <KeyboardDoubleArrowUpIcon
           sx={{ fontSize: "2rem" }}
           className={classes.arrow}
