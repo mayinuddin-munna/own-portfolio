@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const titleBar = (
     <>
-      <Link to="/home">
+      <Link to="/">
         <img src={logo} style={{ height: "3rem" }} alt="logo" />
       </Link>
     </>
@@ -62,7 +62,7 @@ const Navbar = () => {
               <Button
                 key={page}
                 component={Link}
-                to={`/${page.toLowerCase()}`}
+                to={page === "Home" ? "/" : `/${page.toLowerCase()}`}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
@@ -88,7 +88,6 @@ const Navbar = () => {
           >
             {titleBar}
           </Typography>
-          
           <Box>
             {theme.palette.mode} mode
             <IconButton
@@ -136,7 +135,7 @@ const Navbar = () => {
                 <Button
                   key={index}
                   component={Link}
-                  to={`/${page.toLowerCase()}`}
+                  to={page === "/Home" ? "/" : `/${page.toLowerCase()}`}
                   icon={<RestoreIcon />}
                   onClick={handleCloseNavMenu}
                   sx={{ mx: 12, color: "black", display: "block" }}
