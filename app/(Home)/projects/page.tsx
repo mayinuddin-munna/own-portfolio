@@ -26,7 +26,6 @@ export const products = [
     // thumbnail:
     //   "https://aceternity.com/images/products/thumbnails/new/rogue.png",
   },
-
   {
     title: "Editorially",
     link: "https://editorially.org",

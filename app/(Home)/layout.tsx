@@ -1,12 +1,12 @@
+import React from "react";
 import "../globals.css";
 import clsx from "clsx";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-import Navbar from "@/components/feature/layout/navbar/navbar";
 import { ThemeProvider } from "@/src/theme/ThemeProvider";
-import menuItems from '@/src/data/navItem.json';
+import navItems from "@/src/data/navItems.json";
 import Footer from "@/components/feature/layout/footer/footer";
-import { NavbarTwo } from "@/components/feature/layout/navbar/NavbarTwo";
+import { FloatingNav } from "@/components/ui/floating-navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,10 +24,9 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className={clsx(inter.className, "bg-background h-full")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar appName="X Y" menuItems={menuItems} />
-          <NavbarTwo/>
+          <FloatingNav appName="X Y" navItems={navItems} className="" />
           {children}
-          <Footer/>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

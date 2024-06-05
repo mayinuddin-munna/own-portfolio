@@ -1,10 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
-
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { ThemeToggle } from "@/src/theme/ThemeToggle";
 import { z } from "zod";
 

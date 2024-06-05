@@ -1,7 +1,5 @@
 "use client";
 
-import * as React from "react";
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,6 +13,7 @@ import { useTheme } from "next-themes";
 
 export const ThemeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -32,9 +31,9 @@ export const ThemeToggle = () => {
         <DropdownMenuItem onClick={() => setTheme("dark")}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        {/* <DropdownMenuItem onClick={() => setTheme("system")}>
           System
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
       </DropdownMenuContent>
     </DropdownMenu>
   );
