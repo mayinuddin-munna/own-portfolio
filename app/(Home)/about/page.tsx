@@ -7,7 +7,7 @@ const About: React.FC = () => {
     <div className="h-screen w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <div className="lg:flex mx-auto container justify-center items-center">
         <div className="w-full">
-          <p className="text-cente">
+          <p className="">
             I am an enthusiastic and creative Full Stack developer currently in
             the final year of my graduate program, and I am eager to kickstart a
             rewarding career in this field. With a strong passion for creating
