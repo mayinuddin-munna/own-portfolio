@@ -15,7 +15,7 @@ import { Button } from "./button";
 import { Menu, X } from "lucide-react";
 
 const navbarProps = z.object({
-  appName: z.string(),
+  appName: z.string().optional(),
   navItems: z.array(
     z.object({
       name: z.string(),

@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className={clsx(inter.className, "bg-background h-full")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <FloatingNav appName="X Y" navItems={navItems} className="" />
+          <FloatingNav appName="Munna" navItems={navItems} className="" />
           {children}
           <Footer />
         </ThemeProvider>
