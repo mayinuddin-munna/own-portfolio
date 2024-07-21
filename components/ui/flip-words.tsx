@@ -1,12 +1,12 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
 import { cn } from "@/utils/cn";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
 let interval: any;
 
 export const FlipWords = ({
   words,
-  duration = 3000,
+  duration = 5000,
   className,
 }: {
   words: string[];
@@ -21,6 +21,7 @@ export const FlipWords = ({
     return () => {
       clearInterval(interval);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const startAnimation = () => {
@@ -62,12 +63,12 @@ export const FlipWords = ({
           position: "absolute",
         }}
         className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
+          "z-10 inline-block relative text-left text-neutral-100 dark:text-neutral-400 px-2",
           className
         )}
         key={currentWord}
       >
-        {currentWord.split("").map((letter, index) => (
+        {currentWord.split(" ").map((letter, index) => (
           <motion.span
             key={currentWord + index}
             initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
