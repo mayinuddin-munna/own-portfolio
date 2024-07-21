@@ -1,11 +1,11 @@
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import React from "react";
 
-const page = () => {
+const Projects: React.FC = () => {
   return <HeroParallax products={products} />;
 };
 
-export default page;
+export default Projects;
 
 export const products = [
   {

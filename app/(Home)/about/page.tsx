@@ -1,14 +1,16 @@
-import { Button } from '@/components/ui/button'
-import React from 'react'
+import { Button } from "@/components/ui/button";
+import React from "react";
 
-function page() {
+const About: React.FC = () => {
   return (
     <div className="flex items-center justify-center h-screen">
-      <Button variant={'outline'}>
-        <a href="https://github.com/mayinuddin-munna" target='_blank'>About me</a>
+      <Button variant={"outline"}>
+        <a href="https://github.com/mayinuddin-munna" target="_blank">
+          About me
+        </a>
       </Button>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default About;
