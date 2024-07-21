@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 // import emailjs from "@emailjs/browser";
@@ -34,13 +34,28 @@ const Contact = () => {
   };
 
   return (
-    <div className="h-screen">
-      <form ref={form} onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" name="name" />
-        <input type="text" name="name" />
-        <input type="text" name="name" />
-        <input type="text" name="name" />
-      </form>
+    <div className="h-screen w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
+      <div>
+        <div className="text-center text-4xl font-extrabold text-[#1A73E8]">
+          <h1 className=" ">Your Imagination ➡️ My Blueprint</h1>
+          <h2 className="">Let&apos;s Build Together!</h2>
+        </div>
+        <div>
+          <form ref={form} onSubmit={handleSubmit(onSubmit)}>
+            <input type="text" placeholder="Full Name" name="user_name" />{" "}
+            <br />
+            <input type="text" placeholder="Email" name="user_email" />
+            <br />
+            <input type="number" placeholder="Phone No" name="user_phone" />
+            <br />
+            <input type="text" placeholder="Subject line" name="user_subject" />
+            <br />
+            <textarea placeholder="Write your message..." name="user_subject" />
+            <br />
+            <input type="submit" value="Send" />
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
