@@ -14,11 +14,8 @@ const Banner: React.FC = () => {
           <p className="text-neutral-100 dark:text-neutral-400">
             Hello, I&apos;m
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 my-4">
-            Mayinuddin Munna
-          </h1>
-          <div className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-            As a
+          <div className="text-2xl space-y-3 mt-3 md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+            Mayinuddin Munna <br /> As a
             <FlipWords words={words} />
           </div>
           <Button className="mt-7">
