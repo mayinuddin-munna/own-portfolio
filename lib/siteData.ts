@@ -7,8 +7,9 @@ export const headerData = {
     { name: "Portfolio", href: "/portfolio" },
     { name: "Resume", href: "/#resume" },
     { name: "Contact", href: "/contact" },
-    { name: "Blog", href: "/blog" },
+    // { name: "Blog", href: "/blog" },
   ],
+
   socialLinks: [
     {
       bootstrapIcons: "bi bi-facebook",
@@ -126,6 +127,27 @@ export const portfolioData = {
   filterCategories: ["Show All", "First", "Second"],
   projects: [
     {
+      title: "Galaxy Meet",
+      slug: "galaxy-meet",
+      category: "Meeting Platform",
+      excerpt:
+        "Galaxy Meet is calling technology, you can foster seamless communication across borders, time zones, and platforms. Whether it's team meetings, client presentations, or international conferences, our calling solution ensures crystal-clear audio and smooth video connections. Say goodbye to geographical limitations and hello to productive and efficient interactions.",
+      content:
+        '<h2 class="fw-medium">No Worries, No Risk</h2><div class="row g-4"> <div class="col-12 col-lg-6"> <p>If you fail to clear the test, no harm done. Your scores will remain private and will not be shared with any company. You will be allowed to retake the test after a stipulated number of days.</p> </div> <div class="col-12 col-lg-6"> <p>Company, Organization employee can create meeting.</p> </div> </div>',
+      content2:
+        '<h2 class="fw-medium">Features</h2><p>Online Meeting(Conduct online meetings with ease and convenience. Collaborate with team members, clients, or partners from anywhere in the world. Share presentations, discuss projects, and make decisions in real-time.)</p>',
+      thumbnail: "/images/projects/galaxy1.png",
+      projectLink: {
+        label: "Galaxy Meet",
+        url: "https://galaxy-meeting-app.web.app/",
+      },
+      images: ["/images/projects/galaxy1.png", "/images/projects/galaxy2.png"],
+      video: {
+        thumbnail: "/images/projects/galaxy3.png",
+        // url: "https://www.youtube.com/watch?v=V8yu12uRpBA",
+      },
+    },
+    {
       title: "Suit Brand Commerce",
       slug: "suit-brand-commerce",
       category: "E-commerce",
@@ -150,6 +172,27 @@ export const portfolioData = {
       },
     },
     {
+      title: "ID Daddy",
+      slug: "id-daddy",
+      category: "Generate Identity cards",
+      excerpt:
+        "Customizable Design. Digital and Printable Formats(Generate both digital versions (for mobile use) and printable formats (for physical cards)). Secure Features(Integration of security elements like watermarks, holographic overlays, and anti-tampering QR codes.). Convenience",
+      content:
+        '<h2 class="fw-medium">Purpose</h2><div class="row g-4"> <div class="col-12 col-lg-6"> <p>School, Collage, Univeisuty student can make own ID card</p> </div> <div class="col-12 col-lg-6"> <p>Company, Organization employee can make their on Id card.</p> </div> </div>',
+      content2:
+        '<h2 class="fw-medium">For Educational Institutions, Companies and Organizations</h2><p>Assists organizations in issuing ID cards for employees with details like name, job title, and department. Enhances workplace security by distinguishing authorized personnel. Cards can feature QR codes or barcodes for building access control or attendance systems. </p>',
+      thumbnail: "/images/projects/project3.png",
+      projectLink: {
+        label: "ID Daddy",
+        url: "https://identity-card-client.vercel.app/",
+      },
+      images: ["/images/projects/project3.png", "/images/projects/project33.png"],
+      video: {
+        thumbnail: "/images/projects/project333.png",
+        // url: "https://www.youtube.com/watch?v=V8yu12uRpBA",
+      },
+    },
+    {
       title: "Charg Life",
       slug: "charg-life",
       category: "Ecommerce",
@@ -162,32 +205,11 @@ export const portfolioData = {
       thumbnail: "/images/projects/project2.png",
       projectLink: {
         label: "Charg Life",
-        url: "https://charglife.com/",
+        url: "https://charg.vercel.app/",
       },
       images: ["/images/projects/project2.png", "/images/projects/project22.png"],
       video: {
         thumbnail: "/images/projects/project2.png",
-        // url: "https://www.youtube.com/watch?v=V8yu12uRpBA",
-      },
-    },
-    {
-      title: "ID Daddy",
-      slug: "id-daddy",
-      category: "Generate Identity cards",
-      excerpt:
-        "Customizable Design. Digital and Printable Formats(Generate both digital versions (for mobile use) and printable formats (for physical cards)). Secure Features(Integration of security elements like watermarks, holographic overlays, and anti-tampering QR codes.). Convenience",
-      content:
-        '<h2 class="fw-medium">Purpose</h2><div class="row g-4"> <div class="col-12 col-lg-6"> <p>School, Collage, Univeisuty student can make own ID card</p> </div> <div class="col-12 col-lg-6"> <p>Company, Organization employee can make theit on Id card.</p> </div> </div>',
-      content2:
-        '<h2 class="fw-medium">For Educational Institutions, Companies and Organizations</h2><p>Assists organizations in issuing ID cards for employees with details like name, job title, and department. Enhances workplace security by distinguishing authorized personnel. Cards can feature QR codes or barcodes for building access control or attendance systems. </p>',
-      thumbnail: "/images/projects/project3.png",
-      projectLink: {
-        label: "ID Daddy",
-        url: "https://iddaddy.com/",
-      },
-      images: ["/images/projects/project3.png", "/images/projects/project33.png"],
-      video: {
-        thumbnail: "/images/projects/project333.png",
         // url: "https://www.youtube.com/watch?v=V8yu12uRpBA",
       },
     },
@@ -375,7 +397,7 @@ export const slidingTextData = [
   "CSS3",
   "TailindCss",
   "Material UI",
-  "Ant Desin",
+  "Ant Design",
   "Javascript",
   "Typescript",
   "React.js",

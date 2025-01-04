@@ -13,7 +13,7 @@ const siteUrl = 'http://localhost:3000';
 
 export const seoData: PageSEO = {
     home: {
-        title: 'portfolio - Personal vCard/Portfolio Template',
+        title: 'Portfolio - Personal vCard/Portfolio Template',
         description: 'Personal vCard/Portfolio Template',
         keywords: ['home', 'welcome', 'main'],
         canonicalUrl: siteUrl,
